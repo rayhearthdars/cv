@@ -297,6 +297,31 @@ table td:not(:last-child), table th:not(:last-child){
     border-right: solid rgb(18, 100, 73) 3px;
 }
 
+tr:last-child td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+tr:last-child td:nth-of-type(1) {
+    border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+tr:last-child td:nth-of-type(1) {
+    border-bottom-left-radius: 10px;
+}
+tr:first-child th:first-of-type {
+    border-top-left-radius: 10px;
+}
+tr:first-child th:nth-of-type(2) {
+    border-top-right-radius: 10px;
+}
+tr:first-child th:first-of-type {
+    border-top-left-radius: 10px;
+}
+tr:first-child th:nth-of-type(2) {
+    border-top-right-radius: 10px;
+}
+
 th {
     font-size: 20px;
     font-weight: 700;
@@ -325,8 +350,7 @@ td a {
     color: rgb(18, 100, 73);
     text-decoration: none;
     padding: 5px;
-    
-    
+    display: block;
 }
 
 .lien:hover {
