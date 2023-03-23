@@ -315,6 +315,7 @@ td {
     font-size: 18px;
     text-align: left;
     color: rgb(18, 100, 73);
+    cursor: pointer;
 }
 tr:not(:last-child) >td {
     border-bottom: solid rgb(18, 100, 73) 3px;
@@ -324,7 +325,7 @@ td a {
     color: rgb(18, 100, 73);
     text-decoration: none;
     padding: 5px;
-    cursor: pointer;
+    
     
 }
 
@@ -334,7 +335,7 @@ td a {
 
 
 /**************************************************************************************************************************/
-/*Spécifique à la partie compétences*/
+/*Spécifique à la partie compétences soft skills*/
 
 @font-face {
     font-family: FrederickatheGreat-Regular;
