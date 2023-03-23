@@ -1,0 +1,533 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Fin du reset-CSS*/
+/**********************************************************************************************/
+/*Général*/
+
+body {
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    font-size: 3em;
+    text-align: center;
+    background-color: rgb(18, 100, 73);
+    color: #fffefb;
+    padding: 0.3em 0px 0.5em 0px;
+    margin: 0 auto;
+}
+
+nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(220, 243, 235);
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+}
+
+@media screen and (min-width: 0px) {
+    nav {
+        flex-direction: column;
+        height: 100px;
+        position: absolute;
+        top: 12%;
+        left: 7%;
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    nav {
+        flex-direction: row;
+        height: 5%;
+        padding: 10px 0px 10px 10px;
+        position: absolute;
+        top: 13%;
+        left: 10%;
+    }
+}
+
+nav a {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    color: rgb(18, 100, 73);
+    text-decoration: none;
+    font-variant: small-caps;
+    cursor: pointer;
+}
+
+nav a:hover {
+    border-bottom: solid rgb(18, 100, 73) 2px;
+}
+
+main {
+    width: 100%;
+}
+
+/********************************************************************************************/
+/*partie accueil*/
+
+.accueil {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@media screen and (min-width:1100px) {
+    .image_accueil1 {
+        display: none;
+    }
+    .image_accueil2 {
+        display: none;
+    }
+    .image_accueil3 {
+        display: block;
+        width:50%
+    }
+    .accroche {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .image_accueil3 {
+        display: none;
+    }
+    .image_accueil2 {
+        display: block;
+        width: 100%;
+    }
+    .image_accueil1 {
+        display: none;
+    }
+    .accroche {
+        width: 100%;
+    }
+}
+@media screen and (max-width:700px) {
+    .image_accueil3 {
+        display: none;
+    }
+    .image_accueil2 {
+        display: none;
+    }
+    .image_accueil1 {
+        display: block;
+        width: 100%;
+    }
+    .accroche {
+        width: 100%;
+    }
+}
+
+.accroche {
+    padding: 8% 5% 5% 5%;
+    text-align: center;
+    line-height: 35px;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    background-color: #72b5a1;
+    color: rgb(10, 55, 40);
+}
+
+.accroche h2 {
+    text-decoration: underline;
+    padding: 10px;
+    font-variant: small-caps;
+    font-size: 30px;
+    font-style: italic;
+}
+.accroche p {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/********************************************************************************************/
+/*Spécifique à la partie formation et expérience pro*/
+
+
+.container_flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.formation {
+    line-height: 30px;
+    color: rgb(11, 59, 43);
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+.formation h2 {
+    font-size: 23px;
+    font-weight: 500;
+    text-align: center;
+    border: solid rgb(18, 100, 73) 3px;
+    border-radius: 10px;
+    font-variant: small-caps;
+    font-style: italic;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 10px;
+    margin: 35px auto;
+}
+
+.formation h3 {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 5px 0px 15px 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.formation p {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 100;
+    line-height: 20px;
+    padding: 0px 15px 0px 15px;
+    text-align: center;
+}
+
+/********************************************************************************************/
+/*Partie savoirs et formation et expérience pro*/
+
+@media screen and (min-width:1100px) {
+    .formation {
+        width: 47%;
+        height: 100%;
+    }
+    .savoirs {
+        width: 49.3%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .formation {
+        width: 100%;
+        height: 100%;
+    }
+    .savoirs {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/********************************************************************************************/
+/*Spécifique à la partie savoirs*/
+
+
+.savoirs {
+    padding: 5px;
+    background-color: #72b5a1;
+}
+
+.savoirs h2 {
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+table {
+    margin: 0 auto;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    border: solid rgb(18, 100, 73) 3px;
+}
+table td:not(:last-child), table th:not(:last-child){
+    border-right: solid rgb(18, 100, 73) 3px;
+}
+
+th {
+    font-size: 20px;
+    font-weight: 700;
+    font-variant: small-caps;
+    vertical-align: middle;
+    background-color: #aeccc2;
+    line-height: 25px;
+    border-bottom: solid rgb(18, 100, 73) 3px;
+}
+
+td {
+    vertical-align: middle;
+    background-color: #aeccc2;
+    line-height: 25px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: left;
+    color: rgb(18, 100, 73);
+}
+tr:not(:last-child) >td {
+    border-bottom: solid rgb(18, 100, 73) 3px;
+}
+
+td a {
+    color: rgb(18, 100, 73);
+    text-decoration: none;
+    padding: 5px;
+    cursor: pointer;
+    
+}
+
+.lien:hover {
+    background-color:#fffefb;
+}
+
+
+/**************************************************************************************************************************/
+/*Spécifique à la partie compétences*/
+
+@font-face {
+    font-family: FrederickatheGreat-Regular;
+    src: url(../image/Fredericka_the_Great/FrederickatheGreat-Regular.ttf) format(truetype);
+}
+
+.competences {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.container_langue_soft_skills {
+    width: 100%;
+    height: 100%;
+    background-color: #72b5a1;
+}
+
+.soft_skills__et_langues {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.soft_skills__et_langues li {
+    position: absolute;
+    padding: 0px;
+    margin: 0px; 
+}
+
+.soft_skills__et_langues p, .soft_skills__et_langues h2 {
+    display: inline;
+    white-space: nowrap;
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif ;
+    font-size: 35px;
+    margin: 0 auto;
+    position: relative;
+   
+}    
+.soft_skills__et_langues h2 {
+    text-decoration: underline;
+}
+
+
+/**************************************************************************************************************************/
+  /*Spécifique à la partie centre d'intérêts*/
+
+.container_galerie {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.centre_d_interets_titre {
+    margin: 25px;
+    text-align: center;
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif ;
+    font-size: 35px;
+    position: relative;
+    right: 3%;
+}
+
+
+.centre_d_interets{
+    display: flex;
+    margin: 50px auto;
+    position: relative;
+    right: 5%;
+}
+
+#next, #previous{
+    margin: 0 auto;
+    opacity: 0.5;
+    border: none;
+    background-color: #72b5a1;   
+}
+
+@media screen and (min-width: 850px) {
+    .centre_d_interets{
+        width: 590px;
+    }
+    #slider {
+        width: 590px;
+    }
+    #next {
+        position: relative;
+        left: 61px;
+    }
+    
+    #previous {
+        position: relative;
+        right: 61px;
+    }
+    #next, #previous {
+        width: 75px;
+        height: 394px;
+    }
+    .arrow {
+        width: 50px;
+     }
+}
+
+@media screen and (max-width: 850px) {
+    .centre_d_interets{
+        width: 400px;
+    }
+    #slider {
+        width: 400px;
+    }
+    #next {
+        position: relative;
+        left: 40px;
+    }
+    #previous {
+        position: relative;
+        right: 40px;
+    }
+    #next, #previous {
+        width: 40px;
+        height: 268px;
+    }
+    .arrow {
+        width: 30px;
+    }
+}
+
+#figcaption {
+    background-color: #72b5a1;
+    color:rgb(13, 69, 51);
+    position: relative;
+    top: -10px;
+    text-align: center;
+    font-size: 35px;
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif;
+}
+
+/* aside et footer*/
+.contact {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 10px 0px;
+    background-color: #72b5a1;
+}
+
+.contact h3 {
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif;
+    font-size: 30px;
+    color: rgb(13, 69, 51);
+    padding-bottom: 10px;
+}
+
+.contact a{
+    text-decoration: none;
+    color: rgb(13, 69, 51);
+    padding: 10px;
+}
+
+.contact a:hover {
+    background-color: rgb(13, 69, 51);
+    color:#ffffff;
+}
+
+.logo img {
+    width: 20px;
+}
+
+.footer {
+    padding: 10px 0px;
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 100;
+    background-color: rgb(18, 100, 73);
+}
+
+.footer h3 {
+    font-size: 18px;
+    text-decoration: underline;
+}
+.footer a:link {
+    color: #000000;
+    cursor: pointer;
+}
+
+.footer a:visited {
+    color: #aeccc2;
+}
+
+.footer a:hover {
+    background-color: #fffefb;
+}
+
+.footer a:active {
+    color:#fffefb;
+}
+
+/*link, visited, hover, active pour tous les a*/
