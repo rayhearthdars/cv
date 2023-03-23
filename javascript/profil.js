@@ -47,6 +47,8 @@ nextImage.addEventListener("click", function() {next();}, false);
 // If fill is true, create multiple element. If false create only one. 
 // If name is given, add class to element.
 // Return handle to it.
+let soft_skills__et_langues = document.getElementsByClassName('soft_skills__et_langues')[0];
+
 
 function addElement (text, blockType, parent, fill, numTop, name){
     let el= document.createElement(blockType);
@@ -58,10 +60,10 @@ function addElement (text, blockType, parent, fill, numTop, name){
     let width = el.offsetWidth;
     let height = el.offsetHeight;
     let multiplier = (parentWidth/width) / 2 ;
-    let padding = (parentWidth - width * (multiplier)) / (multiplier) / 2;  
+    let paddingSides = (((parentWidth) - (width * multiplier)) / (multiplier)/2);  
 
     if (numTop !== -1 ) {
-        el.style.top = height*numTop + 'px';
+        el.style.top = height*(numTop) + 15 + 'px';
    }
 
     if (name != undefined){
@@ -70,8 +72,8 @@ function addElement (text, blockType, parent, fill, numTop, name){
     
     if (fill) {
         el.style.position = 'absolute';
-        el.style.padding = '6px ' + padding + 'px';
-            
+        el.style.paddingLeft = paddingSides + 'px';
+        el.style.paddingRight = paddingSides + 'px';           
     }
 
     if (fill) {
@@ -80,28 +82,29 @@ function addElement (text, blockType, parent, fill, numTop, name){
             let newContent = document.createTextNode(text);
             el.appendChild(newContent);
             parent.appendChild(el);
-            el.style.padding = '6px ' + padding + 'px';
+            el.style.paddingLeft = paddingSides + 'px';
+            el.style.paddingRight = paddingSides + 'px'; 
 
             if (name != undefined){
                 el.classList.add(name);
                 el.style.position = 'absolute'; //chg               
             }
             if (numTop !== -1 ) {
-                el.style.top = height*numTop + 'px';
+                el.style.top = height*(numTop) + 15 + 'px';
            }        
         }
     }
-
-     
-           
+    
+let heightOfSoft_skills__et_langues = height * 8  + 50;
+soft_skills__et_langues.style.height = heightOfSoft_skills__et_langues + 'px';
+       
     return el;
 }
 
-let soft_skills__et_langues = document.getElementsByClassName('soft_skills__et_langues')[0];
+
 
 let div = addElement('', 'div', soft_skills__et_langues, false, -1);
 addElement('Soft skills', 'h2', div, true, 0, 'skill');
-// addElement('Soft skills', 'h2', div, false, 'skill');                          // A enlever
 let ulEl = addElement('', 'ul', soft_skills__et_langues, false, -1);
 let liEl = addElement('', 'li', ulEl, false, -1)
 addElement('Prise de recul', 'p', liEl, true, 1, 'recu');
@@ -119,9 +122,7 @@ addElement('Anglais', 'p', liEl, true, 6, 'ang');
 liEl = addElement('', 'li', ulEl, false, -1);
 addElement('Allemand', 'p', liEl, true, 7, 'all');
 
-let height = document.getElementsByClassName('skill')[0].offsetHeight;
-let heightOfSoft_skills__et_langues = height * 7;
-soft_skills__et_langues.style.height = heightOfSoft_skills__et_langues + 'px';
+
 
 
 /*Permettre aux soft skills et langues de défiler sans interruption*/
@@ -141,10 +142,10 @@ function moveElementsForwards (el) {
 function moveElementsBackwards (el) {
     let elWidth = el[0].offsetWidth;  
     for (let i = 0; i < el.length; i++) {
-        pos[i] = (elWidth * i) + elWidth + pos1;
-        el[i].style.left = ((pos[i] % (pos2 + elWidth)) - elWidth) + "px";      
+        pos[i] = (elWidth * i) + elWidth - pos1;
+        el[i].style.left = (((pos[i] +pos2) % (pos2 + elWidth)) - elWidth) + "px";      
     }
-    pos1 += 0.05; 
+    pos1 += 0.5; 
 }
 
 let elClassSkill = document.getElementsByClassName('skill');
@@ -156,11 +157,11 @@ let elClassLang = document.getElementsByClassName('lang');
 let elClassAng = document.getElementsByClassName('ang');
 let elClassAll = document.getElementsByClassName('all');
 
-let tSkill = setInterval(moveElementsForwards, 1, elClassSkill);
-let tRecu = setInterval(moveElementsBackwards, 1, elClassRecu);
-let tCuri = setInterval(moveElementsForwards, 1, elClassCuri);
-let tRig = setInterval(moveElementsBackwards, 1, elClassRig);
-let tOrg = setInterval(moveElementsForwards, 1, elClassOrg);
-let tLang = setInterval(moveElementsBackwards, 1, elClassLang);
-let tAng = setInterval(moveElementsForwards, 1, elClassAng);
-let tAll = setInterval(moveElementsBackwards, 1, elClassAll);
+let tSkill = setInterval(moveElementsForwards, 50, elClassSkill);
+let tRecu = setInterval(moveElementsBackwards, 50, elClassRecu);
+let tCuri = setInterval(moveElementsForwards, 50, elClassCuri);
+let tRig = setInterval(moveElementsBackwards, 50, elClassRig);
+let tOrg = setInterval(moveElementsForwards, 50, elClassOrg);
+let tLang = setInterval(moveElementsBackwards, 50, elClassLang);
+let tAng = setInterval(moveElementsForwards, 50, elClassAng);
+let tAll = setInterval(moveElementsBackwards, 50, elClassAll);

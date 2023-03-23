@@ -354,13 +354,13 @@ td a {
 
 .soft_skills__et_langues {
     width: 100%;
+    height: 100%;
     display: inline-block;
     position: relative;
 }
 .soft_skills__et_langues li {
     position: absolute;
-    padding: 0px;
-    margin: 0px; 
+    height: 100%;
 }
 
 .soft_skills__et_langues p, .soft_skills__et_langues h2 {
@@ -368,9 +368,8 @@ td a {
     white-space: nowrap;
     font-family: FrederickatheGreat-Regular, cursive, sans-serif ;
     font-size: 35px;
-    margin: 0 auto;
     position: relative;
-   
+    height: 100%;   
 }    
 .soft_skills__et_langues h2 {
     text-decoration: underline;
@@ -418,7 +417,7 @@ td a {
     }
     #next {
         position: relative;
-        left: 61px;
+        left: 61.5px;
     }
     
     #previous {
