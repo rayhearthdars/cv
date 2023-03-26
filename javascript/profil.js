@@ -131,21 +131,48 @@ let pos1 = 0;
 let pos2 = window.innerWidth;
 let pos = []; 
 
-function moveElementsForwards (el) {
-    let elWidth = el[0].offsetWidth;  
-    for (let i = 0; i < el.length; i++) {
-        pos[i] = (elWidth * i) + elWidth + pos1;
-        el[i].style.left = ((pos[i] % (pos2 + elWidth)) - elWidth) + "px";      
+// position[0] = (elWidth * i) + elWidth;
+
+function initialPositionOfElement(el){
+    for (let i=0; i < el.length; i++){
+        let position = el[0].offsetWidth * i;
+        el[i].style.left = position + "px";
     }
-    pos1 += 0.05; 
 }
+
+// function moveElementsForwards (el) {
+
+//     for (let i = 0; i < el.length; i++) {
+         
+//         position[i] = (((position[i] + 0.05) % (pos2 + elWidth)) - elWidth);
+//         el[i].style.left = position[i] + "px";
+//     }
+// }
+function moveElementsForwards (el) {
+    let elWidth = el[0].offsetWidth;
+    for (let i = 0; i < el.length; i++) {
+        let position = parseFloat(el[i].style.left.slice(0, -2)) + elWidth;
+        position = (((position + 0.1) % (pos2 + elWidth)));
+        el[i].style.left = (position - elWidth) + "px";
+    }
+}
+
 function moveElementsBackwards (el) {
+    function convertToBrown (x){
+        let u = pos2 -x;
+        return u;
+    }
+    function convertToBlack (u) {
+        let x = pos2 - u;
+        return x;
+    }
     let elWidth = el[0].offsetWidth;  
     for (let i = 0; i < el.length; i++) {
-        pos[i] = (elWidth * i) + elWidth - pos1;
-        el[i].style.left = (((pos[i] +pos2) % (pos2 + elWidth)) - elWidth) + "px";      
-    }
-    pos1 += 0.5; 
+        let position = parseFloat(el[i].style.left.slice(0, -2));
+        let posConverted = convertToBrown(position);
+        let newBrownPosition = ((posConverted + 0.1) % (pos2 + elWidth));
+        el[i].style.left = convertToBlack(newBrownPosition) + "px";
+    } 
 }
 
 let elClassSkill = document.getElementsByClassName('skill');
@@ -157,11 +184,26 @@ let elClassLang = document.getElementsByClassName('lang');
 let elClassAng = document.getElementsByClassName('ang');
 let elClassAll = document.getElementsByClassName('all');
 
+let tSkilInitialPosition = initialPositionOfElement(elClassSkill);
 let tSkill = setInterval(moveElementsForwards, 50, elClassSkill);
+
+let tRecuInitialPosition = initialPositionOfElement(elClassRecu);
 let tRecu = setInterval(moveElementsBackwards, 50, elClassRecu);
+
+let tCuriInitialPosition = initialPositionOfElement(elClassCuri);
 let tCuri = setInterval(moveElementsForwards, 50, elClassCuri);
+
+let tRigInitialPosition = initialPositionOfElement(elClassRig);
 let tRig = setInterval(moveElementsBackwards, 50, elClassRig);
+
+let tOrgInitialPosition = initialPositionOfElement(elClassOrg);
 let tOrg = setInterval(moveElementsForwards, 50, elClassOrg);
+
+let tLangInitialPosition = initialPositionOfElement(elClassLang);
 let tLang = setInterval(moveElementsBackwards, 50, elClassLang);
+
+let tAngInitialPosition = initialPositionOfElement(elClassAng);
 let tAng = setInterval(moveElementsForwards, 50, elClassAng);
+
+let tAllInitialPosition = initialPositionOfElement(elClassAll);
 let tAll = setInterval(moveElementsBackwards, 50, elClassAll);
