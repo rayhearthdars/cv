@@ -129,7 +129,7 @@ a:link {
     cursor: pointer;
 }
 a:visited {
-    color: #fffefb;
+    color: rgb(18, 100, 73);
 }
 a:hover, .lien:hover {
     background-color: #fffefb;
