@@ -112,7 +112,7 @@ nav a {
 }
 
 nav a:visited{
-    color:#72b5a1
+    color:#72b5a1;
 }
 
 nav a:hover {
@@ -124,12 +124,12 @@ main {
     width: 100%;
 }
 
-a:link {
+a:link{
     color: rgb(13, 69, 51);
     cursor: pointer;
 }
 a:visited {
-    color: rgb(18, 100, 73);
+    color:#72b5a1;
 }
 a:hover, .lien:hover {
     background-color: #fffefb;
@@ -143,7 +143,7 @@ a:active {
 .accroche, .savoirs, .container_langue_soft_skills, #next, #previous, #figcaption, .contact {
       background-color: #72b5a1;
 }
-.accroche, .formation, td, td a, #figcaption, .contact h3 {
+.accroche, .formation, td, #figcaption, .contact h3 {
     color: rgb(13, 69, 51);
 }
 .accroche h2, .savoirs h2,.soft_skills__et_langues p, .soft_skills__et_langues h2, .centre_d_interets_titre , #figcaption, .contact h3, .footer h3 {
@@ -546,6 +546,3 @@ td a {
     padding-bottom: 10px;
 }
 
-a:link {
-    color: #000000;
-}
