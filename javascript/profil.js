@@ -1,13 +1,13 @@
-// /*Galerie d'images */
+// /*Images gallery */
 
-var images = [
+var images = [  //create new array with images to show in gallery
     "image/jeu_de_societe.jpg",
     "image/randonnee.jpg",
     "image/lecture.jpg",
     "image/video_game.jpg"
 ];
 
-var figcaptions = [
+var figcaptions = [  //create array with captions to show in gallery
     "Jeux de société",
     "Randonnée",
     "Lecture",
@@ -16,16 +16,16 @@ var figcaptions = [
 
 var num = 0;
 function next() {
-    let slider = document.getElementById("slider");
-    let caption_slider = document.getElementById("figcaption");
+    let slider = document.getElementById("slider"); // get first image
+    let caption_slider = document.getElementById("figcaption"); // get first caption
     num++;
     if (num >= images.length) {
         num = 0;
     }
-    slider.src = images[num];
-    caption_slider.textContent = figcaptions[num];
+    slider.src = images[num]; // source of el slider changes according to num
+    caption_slider.textContent = figcaptions[num]; // same for text content of caption
 }
-function previous() {
+function previous() { // same in reverse
     let slider = document.getElementById("slider");
     let caption_slider = document.getElementById("figcaption");
     num--;
@@ -39,8 +39,8 @@ function previous() {
 let prevImage = document.getElementById("previous");
 let nextImage = document.getElementById("next");
 
-prevImage.addEventListener("click", function() {previous();}, false);
-nextImage.addEventListener("click", function() {next();}, false);
+prevImage.addEventListener("click", function() {previous();}, false); // add event on click to id = previous button
+nextImage.addEventListener("click", function() {next();}, false); // add event on click to id = next button
 /**************************************************************** */
 
 // Create blocktype element with text content add it as parent's child.
@@ -59,24 +59,24 @@ function addElement (text, blockType, parent, fill, numTop, name){
     let parentWidth = window.innerWidth;
     let width = el.offsetWidth;
     let height = el.offsetHeight;
-    let multiplier = (parentWidth/width) / 2 ;
-    let paddingSides = (((parentWidth) - (width * multiplier)) / (multiplier)/2);  
+    let multiplier = (parentWidth/width) / 2 ; // calculates the number of element to add to html so that it covers the entire screen
+    let paddingSides = (((parentWidth) - (width * multiplier)) / (multiplier)/2);  //calculates padding to add to each element
 
     if (numTop !== -1 ) {
-        el.style.top = height*(numTop) + 15 + 'px';
+        el.style.top = height*(numTop) + 15 + 'px'; //position each el[0] from top according to their number (in order of their apparition)
    }
 
     if (name != undefined){
         el.classList.add(name);
     }
     
-    if (fill) {
+    if (fill) { //for the first element of the elements that are repeated
         el.style.position = 'absolute';
         el.style.paddingLeft = paddingSides + 'px';
         el.style.paddingRight = paddingSides + 'px';           
     }
 
-    if (fill) {
+    if (fill) { //for all the elements that are repeated except the first
         for (let i = 0; i < multiplier -1; i++) {
             let el= document.createElement(blockType);
             let newContent = document.createTextNode(text);
@@ -84,25 +84,23 @@ function addElement (text, blockType, parent, fill, numTop, name){
             parent.appendChild(el);
             el.style.paddingLeft = paddingSides + 'px';
             el.style.paddingRight = paddingSides + 'px'; 
-
-            if (name != undefined){
-                el.classList.add(name);
-                el.style.position = 'absolute'; //chg               
-            }
+            el.classList.add(name);
+            el.style.position = 'absolute';              
+            
             if (numTop !== -1 ) {
-                el.style.top = height*(numTop) + 15 + 'px';
+                el.style.top = height*(numTop) + 15 + 'px';  //position each el[i] from top according to their number (in order of their apparition) (except first one)
            }        
         }
     }
     
-let heightOfSoft_skills__et_langues = height * 8  + 50;
+let heightOfSoft_skills__et_langues = height * 8  + 50; 
 soft_skills__et_langues.style.height = heightOfSoft_skills__et_langues + 'px';
        
     return el;
 }
 
 
-
+//Create new el div for soft skills and langues and h2 then ul for each el then several li for each ul  and then multiple p for each li
 let div = addElement('', 'div', soft_skills__et_langues, false, -1);
 addElement('Soft skills', 'h2', div, true, 0, 'skill');
 let ulEl = addElement('', 'ul', soft_skills__et_langues, false, -1);
@@ -125,55 +123,45 @@ addElement('Allemand', 'p', liEl, true, 7, 'all');
 
 
 
-/*Permettre aux soft skills et langues de défiler sans interruption*/
+/*let el go by without interruption*/
 
-let pos1 = 0;
 let pos2 = window.innerWidth;
-let pos = []; 
-
-// position[0] = (elWidth * i) + elWidth;
 
 function initialPositionOfElement(el){
     for (let i=0; i < el.length; i++){
-        let position = el[0].offsetWidth * i;
+        let position = el[0].offsetWidth * i; //length of 1 el[0] is the same for each el[i]
         el[i].style.left = position + "px";
     }
 }
-
-// function moveElementsForwards (el) {
-
-//     for (let i = 0; i < el.length; i++) {
-         
-//         position[i] = (((position[i] + 0.05) % (pos2 + elWidth)) - elWidth);
-//         el[i].style.left = position[i] + "px";
-//     }
-// }
+// position[0] = (elWidth * i) + elWidth;
 function moveElementsForwards (el) {
     let elWidth = el[0].offsetWidth;
     for (let i = 0; i < el.length; i++) {
-        let position = parseFloat(el[i].style.left.slice(0, -2)) + elWidth;
-        position = (((position + 0.1) % (pos2 + elWidth)));
-        el[i].style.left = (position - elWidth) + "px";
+        let position = parseFloat(el[i].style.left.slice(0, -2)) + elWidth; //slice to remove "px" from el[i].style.left and turns string to float
+                //add elWidth to make elWidth the origin so as to make every new el[i] start at -elWidth and not 0 so we can have the impression of an uninterrupted line
+        position = (((position + 0.1) % (pos2 + elWidth))); //length of pos2 if elWidth is origin
+        el[i].style.left = (position - elWidth) + "px"; //return origin to 0
     }
 }
 
 function moveElementsBackwards (el) {
-    function convertToBrown (x){
-        let u = pos2 -x;
+    function invertPos2AndOrigin(x){
+        let u = pos2 -x;  //absolute value of pos2 becomes the origin so 0 to x becomes pos2 - x
         return u;
     }
-    function convertToBlack (u) {
-        let x = pos2 - u;
+    function returnToNormal (u) {
+        let x = pos2 - u;  //0 is the origin once again so x is pos2 - u
         return x;
     }
     let elWidth = el[0].offsetWidth;  
     for (let i = 0; i < el.length; i++) {
-        let position = parseFloat(el[i].style.left.slice(0, -2));
-        let posConverted = convertToBrown(position);
-        let newBrownPosition = ((posConverted + 0.1) % (pos2 + elWidth));
-        el[i].style.left = convertToBlack(newBrownPosition) + "px";
+        let position = parseFloat(el[i].style.left.slice(0, -2));  //.slice to remove "px" from el[i].style.left and turns string to float
+        let posConverted = invertPos2AndOrigin(position);
+        let PositionWithPos2AsOrigin = ((posConverted + 0.1) % (pos2 + elWidth));
+        el[i].style.left = returnToNormal(PositionWithPos2AsOrigin) + "px";
     } 
 }
+
 
 let elClassSkill = document.getElementsByClassName('skill');
 let elClassRecu = document.getElementsByClassName('recu');
@@ -183,6 +171,9 @@ let elClassOrg = document.getElementsByClassName('org');
 let elClassLang = document.getElementsByClassName('lang');
 let elClassAng = document.getElementsByClassName('ang');
 let elClassAll = document.getElementsByClassName('all');
+
+//call intitialPosition for every class
+// call setInterval function to call moveElementsForwards or moveElementsBackwards every 50ms
 
 let tSkilInitialPosition = initialPositionOfElement(elClassSkill);
 let tSkill = setInterval(moveElementsForwards, 50, elClassSkill);
