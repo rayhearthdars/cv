@@ -136,7 +136,8 @@ a:hover, .lien:hover {
     color: rgb(13, 69, 51);
 }
 a:active {
-    color:#fffefb;
+    background-color: #fffefb;
+    color: rgb(13, 69, 51);
 }
 
 .accroche, .savoirs, .container_langue_soft_skills, #next, #previous, #figcaption, .contact {
