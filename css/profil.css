@@ -546,3 +546,11 @@ td a {
     padding-bottom: 10px;
 }
 
+.footer a {
+    color: #aeccc2;
+}
+
+.footer a:visited {
+    color: #fffefb;
+}
+
