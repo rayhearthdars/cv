@@ -59,7 +59,8 @@ function addElement (text, blockType, parent, fill, numTop, name){
     let parentWidth = window.innerWidth;
     let width = el.offsetWidth;
     let height = el.offsetHeight;
-    let multiplier = (parentWidth/width) / 2 ; // calculates the number of element to add to html so that it covers the entire screen
+    //had to add 1 to have a better look but there is still a problem of padding
+    let multiplier = 1 + (parentWidth/width) / 2 ; // calculates the number of element to add to html so that it covers the entire screen
     let paddingSides = (((parentWidth) - (width * multiplier)) / (multiplier)/2);  //calculates padding to add to each element
 
     if (numTop !== -1 ) {
@@ -105,13 +106,13 @@ let div = addElement('', 'div', soft_skills__et_langues, false, -1);
 addElement('Soft skills', 'h2', div, true, 0, 'skill');
 let ulEl = addElement('', 'ul', soft_skills__et_langues, false, -1);
 let liEl = addElement('', 'li', ulEl, false, -1)
-addElement('Prise de recul', 'p', liEl, true, 1, 'recu');
+addElement('Apprentissage rapide', 'p', liEl, true, 1, 'app');
 liEl = addElement('', 'li', ulEl, false, -1);
 addElement('Curiosité', 'p', liEl, true, 2, 'curi');
 liEl = addElement('', 'li', ulEl, false, -1);
 addElement('Rigueur', 'p', liEl, true, 3, 'rig');
 liEl = addElement('', 'li', ulEl, false, -1);
-addElement("Sens de l'organisation", 'p', liEl, true, 4, 'org');
+addElement("Organisée", 'p', liEl, true, 4, 'org');
 div = addElement('', 'div', soft_skills__et_langues, false, -1);
 addElement('Langues', 'h2', div, true, 5, 'lang');
 ulEl = addElement('', 'ul', soft_skills__et_langues, false, -1);
@@ -139,7 +140,7 @@ function moveElementsForwards (el) {
     for (let i = 0; i < el.length; i++) {
         let position = parseFloat(el[i].style.left.slice(0, -2)) + elWidth; //slice to remove "px" from el[i].style.left and turns string to float
                 //add elWidth to make elWidth the origin so as to make every new el[i] start at -elWidth and not 0 so we can have the impression of an uninterrupted line
-        position = (((position + 0.1) % (pos2 + elWidth))); //length of pos2 if elWidth is origin
+        position = (((position + 0.5) % (pos2 + elWidth))); //length of pos2 if elWidth is origin
         el[i].style.left = (position - elWidth) + "px"; //return origin to 0
     }
 }
@@ -157,14 +158,14 @@ function moveElementsBackwards (el) {
     for (let i = 0; i < el.length; i++) {
         let position = parseFloat(el[i].style.left.slice(0, -2));  //.slice to remove "px" from el[i].style.left and turns string to float
         let posConverted = invertPos2AndOrigin(position);
-        let PositionWithPos2AsOrigin = ((posConverted + 0.1) % (pos2 + elWidth));
+        let PositionWithPos2AsOrigin = ((posConverted + 0.5) % (pos2 + elWidth));
         el[i].style.left = returnToNormal(PositionWithPos2AsOrigin) + "px";
     } 
 }
 
 
 let elClassSkill = document.getElementsByClassName('skill');
-let elClassRecu = document.getElementsByClassName('recu');
+let elClassApp = document.getElementsByClassName('app');
 let elClassCuri = document.getElementsByClassName('curi');
 let elClassRig = document.getElementsByClassName('rig');
 let elClassOrg = document.getElementsByClassName('org');
@@ -178,8 +179,8 @@ let elClassAll = document.getElementsByClassName('all');
 let tSkilInitialPosition = initialPositionOfElement(elClassSkill);
 let tSkill = setInterval(moveElementsForwards, 50, elClassSkill);
 
-let tRecuInitialPosition = initialPositionOfElement(elClassRecu);
-let tRecu = setInterval(moveElementsBackwards, 50, elClassRecu);
+let tAppInitialPosition = initialPositionOfElement(elClassApp);
+let tApp = setInterval(moveElementsBackwards, 50, elClassApp);
 
 let tCuriInitialPosition = initialPositionOfElement(elClassCuri);
 let tCuri = setInterval(moveElementsForwards, 50, elClassCuri);
