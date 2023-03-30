@@ -59,8 +59,7 @@ function addElement (text, blockType, parent, fill, numTop, name){
     let parentWidth = window.innerWidth;
     let width = el.offsetWidth;
     let height = el.offsetHeight;
-    //had to add 1 to have a better look but there is still a problem of padding
-    let multiplier = 1 + (parentWidth/width) / 2 ; // calculates the number of element to add to html so that it covers the entire screen
+    let multiplier = (parentWidth/width) / 2 ; // calculates the number of element to add to html so that it covers the entire screen
     let paddingSides = (((parentWidth) - (width * multiplier)) / (multiplier)/2);  //calculates padding to add to each element
 
     if (numTop !== -1 ) {
