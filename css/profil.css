@@ -246,10 +246,15 @@ a:active {
     .formation {
         width: 47%;
         height: 100%;
+        margin-bottom: 2rem;
     }
     .savoirs {
         width: 49.3%;
         height: 100%;
+        margin-bottom: 2rem;
+    }
+    .competences{
+        margin-bottom: 2rem;
     }
 }
 
@@ -280,6 +285,7 @@ a:active {
     line-height: 30px;
     background-color: #ffffff;
     margin: 0 auto;
+    padding-bottom: 2rem;
 }
 
 .formation h2 {
@@ -402,13 +408,12 @@ td a {
     width: 100%;
     display: flex;
     overflow: hidden;
-    display: flex;
     
 }
 @media screen and (min-width: 1100px) {
     .container_langue_soft_skills {
-        width: 75%;
-        height: 100%;
+        width: 100%;
+        height: 92%;
     }    
 }
 @media screen and (max-width: 1100px) {
@@ -423,7 +428,7 @@ td a {
         margin: 0 auto;
         width: 100%;
         border-radius: 15px;
-        /* margin-bottom: 15px; */
+        margin-bottom: 2rem;
     }
 }
 
@@ -436,7 +441,7 @@ td a {
 .soft_skills__et_langues_template p, .soft_skills__et_langues_template h2 {
     color:rgb(18, 100, 73);
     font-size: 35px;
-    padding-top: 15px;
+    padding-top: 1rem;
     font-family: FrederickatheGreat-Regular, cursive, sans-serif;
     text-align: center;
 }
@@ -468,7 +473,6 @@ td a {
 .soft_skills__et_langues h2 {
     text-decoration: underline;
 }
-/*change order of boxes according to viewport sizes*/
 
 /**************************************************************************************************************************/
   /*Spécifique à la partie centre d'intérêts*/
@@ -482,78 +486,52 @@ td a {
     margin: 25px;
     text-align: center;
     font-size: 35px;
-    position: relative;
-    right: 3%;
 }
 
 .centre_d_interets{
-    display: flex;
     margin: 50px auto;
-    position: relative;
-    right: 5%;
+}
+
+.figure {
+    display: flex;
+    justify-content: center;
+    max-width: 90%;
+    min-width: 200px;
+    margin: 0 auto;
+}
+
+#slider {
+    min-width: 200px;
+    max-width: 100%;
 }
 
 #next, #previous{
-    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    align-content: center;
     opacity: 0.5;
     border: none;
+    width: 25px;
+    overflow: hidden;
 }
 
-@media screen and (min-width: 850px) {
-    .centre_d_interets{
-        width: 590px;
-    }
-    #slider {
-        width: 590px;
-    }
-    #next {
-        position: relative;
-        left: 61.5px;
-    }
-    
-    #previous {
-        position: relative;
-        right: 61px;
-    }
-    #next, #previous {
-        width: 75px;
-        height: 394px;
-    }
-    .arrow {
-        width: 50px;
-     }
-}
-
-@media screen and (max-width: 850px) {
-    .centre_d_interets{
-        width: 400px;
-    }
-    #slider {
-        width: 400px;
-    }
-    #next {
-        position: relative;
-        left: 40px;
-    }
-    #previous {
-        position: relative;
-        right: 40px;
-    }
-    #next, #previous {
-        width: 40px;
-        height: 268px;
-    }
-    .arrow {
-        width: 30px;
-    }
+.arrow {
+    width: 15px;
 }
 
 #figcaption {
-    position: relative;
-    top: -10px;
+    display: block;
+    /* position: relative;
+    top: -10px; */
     text-align: center;
     font-size: 35px;
+    max-width: 38%;
+    min-width: 200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    background-color: #fff;
 }
+
 
 /* aside et footer*/
 .contact {
