@@ -93,7 +93,7 @@ function addElement (text, blockType, parent, fill, numTop, name){
         }
     }
     
-let heightOfSoft_skills__et_langues = height * 8  + 50; 
+let heightOfSoft_skills__et_langues = height * 7; 
 soft_skills__et_langues.style.height = heightOfSoft_skills__et_langues + 'px';
        
     return el;
@@ -104,21 +104,21 @@ soft_skills__et_langues.style.height = heightOfSoft_skills__et_langues + 'px';
 let div = addElement('', 'div', soft_skills__et_langues, false, -1);
 addElement('Soft skills', 'h2', div, true, 0, 'skill');
 let ulEl = addElement('', 'ul', soft_skills__et_langues, false, -1);
-let liEl = addElement('', 'li', ulEl, false, -1)
-addElement('Apprentissage rapide', 'p', liEl, true, 1, 'app');
+// let liEl = addElement('', 'li', ulEl, false, -1)
+// addElement('Apprentissage rapide', 'p', liEl, true, 1, 'app');
 liEl = addElement('', 'li', ulEl, false, -1);
-addElement('Curiosité', 'p', liEl, true, 2, 'curi');
+addElement('Curiosité', 'p', liEl, true, 1, 'curi');
 liEl = addElement('', 'li', ulEl, false, -1);
-addElement('Rigueur', 'p', liEl, true, 3, 'rig');
+addElement('Rigueur', 'p', liEl, true, 2, 'rig');
 liEl = addElement('', 'li', ulEl, false, -1);
-addElement("Organisée", 'p', liEl, true, 4, 'org');
+addElement("Organisée", 'p', liEl, true, 3, 'org');
 div = addElement('', 'div', soft_skills__et_langues, false, -1);
-addElement('Langues', 'h2', div, true, 5, 'lang');
+addElement('Langues', 'h2', div, true, 4, 'lang');
 ulEl = addElement('', 'ul', soft_skills__et_langues, false, -1);
 liEl = addElement('', 'li', ulEl, false, -1);
-addElement('Anglais', 'p', liEl, true, 6, 'ang');
+addElement('Anglais', 'p', liEl, true, 5, 'ang');
 liEl = addElement('', 'li', ulEl, false, -1);
-addElement('Allemand', 'p', liEl, true, 7, 'all');
+addElement('Allemand', 'p', liEl, true, 6, 'all');
 
 
 
@@ -164,7 +164,7 @@ function moveElementsBackwards (el) {
 
 
 let elClassSkill = document.getElementsByClassName('skill');
-let elClassApp = document.getElementsByClassName('app');
+// let elClassApp = document.getElementsByClassName('app');
 let elClassCuri = document.getElementsByClassName('curi');
 let elClassRig = document.getElementsByClassName('rig');
 let elClassOrg = document.getElementsByClassName('org');
@@ -178,23 +178,23 @@ let elClassAll = document.getElementsByClassName('all');
 let tSkilInitialPosition = initialPositionOfElement(elClassSkill);
 let tSkill = setInterval(moveElementsForwards, 50, elClassSkill);
 
-let tAppInitialPosition = initialPositionOfElement(elClassApp);
-let tApp = setInterval(moveElementsBackwards, 50, elClassApp);
+// let tAppInitialPosition = initialPositionOfElement(elClassApp);
+// let tApp = setInterval(moveElementsBackwards, 50, elClassApp);
 
 let tCuriInitialPosition = initialPositionOfElement(elClassCuri);
-let tCuri = setInterval(moveElementsForwards, 50, elClassCuri);
+let tCuri = setInterval(moveElementsBackwards, 50, elClassCuri);
 
 let tRigInitialPosition = initialPositionOfElement(elClassRig);
-let tRig = setInterval(moveElementsBackwards, 50, elClassRig);
+let tRig = setInterval(moveElementsForwards, 50, elClassRig);
 
 let tOrgInitialPosition = initialPositionOfElement(elClassOrg);
-let tOrg = setInterval(moveElementsForwards, 50, elClassOrg);
+let tOrg = setInterval(moveElementsBackwards, 50, elClassOrg);
 
 let tLangInitialPosition = initialPositionOfElement(elClassLang);
-let tLang = setInterval(moveElementsBackwards, 50, elClassLang);
+let tLang = setInterval(moveElementsForwards, 50, elClassLang);
 
 let tAngInitialPosition = initialPositionOfElement(elClassAng);
-let tAng = setInterval(moveElementsForwards, 50, elClassAng);
+let tAng = setInterval(moveElementsBackwards, 50, elClassAng);
 
 let tAllInitialPosition = initialPositionOfElement(elClassAll);
-let tAll = setInterval(moveElementsBackwards, 50, elClassAll);
+let tAll = setInterval(moveElementsForwards, 50, elClassAll);
