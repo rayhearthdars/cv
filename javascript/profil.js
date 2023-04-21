@@ -4,14 +4,16 @@ var images = [  //create new array with images to show in gallery
     "image/jeu_de_societe.jpg",
     "image/randonnee.jpg",
     "image/lecture.jpg",
-    "image/video_game.jpg"
+    "image/video_game.jpg",
+    "image/peinture.jpg"
 ];
 
 var figcaptions = [  //create array with captions to show in gallery
     "Jeux de société",
     "Randonnée",
     "Lecture",
-    "Jeux Vidéo"
+    "Jeux Vidéo",
+    "Peinture"
 ]
 
 var num = 0;

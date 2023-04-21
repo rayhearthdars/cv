@@ -143,13 +143,13 @@ a:active {
     color: rgb(13, 69, 51);
 }
 
-.accroche, .savoirs, .container_langue_soft_skills, #next, #previous, #figcaption, .contact {
+.accroche, .savoirs, .container_langue_soft_skills, #next, #previous, #figcaption, .portofolio {
       background-color: #72b5a1;
 }
 .accroche, .formation, td, #figcaption, .contact h3 {
     color: rgb(13, 69, 51);
 }
-.accroche h2, .savoirs h2,.soft_skills__et_langues p, .soft_skills__et_langues h2, .centre_d_interets_titre , #figcaption, .contact h3, .footer h3 {
+.accroche h2, .savoirs h2,.soft_skills__et_langues p, .soft_skills__et_langues h2, .centre_d_interets_titre , #figcaption, .portofolio, .contact h3, .footer h3 {
     font-family: FrederickatheGreat-Regular, cursive, sans-serif;
 }
 
@@ -513,23 +513,23 @@ a:active {
 .centre_d_interets_titre {
     margin: 25px;
     text-align: center;
-    font-size: 35px;
+    font-size: 2rem;
 }
 
 .centre_d_interets{
-    margin: 50px auto;
+    margin: 3.125rem auto;
 }
 
 .figure {
     display: flex;
     justify-content: center;
     max-width: 90%;
-    min-width: 200px;
+    min-width: 12.5rem;
     margin: 0 auto;
 }
 
 #slider {
-    min-width: 200px;
+    min-width: 12.5rem;
     max-width: 100%;
 }
 
@@ -539,28 +539,104 @@ a:active {
     align-content: center;
     opacity: 0.5;
     border: none;
-    width: 25px;
+    width: 1.5625rem;
     overflow: hidden;
 }
 
 .arrow {
-    width: 15px;
+    width: 0.9375rem;
 }
 
 #figcaption {
     display: block;
-    /* position: relative;
-    top: -10px; */
     text-align: center;
-    font-size: 35px;
+    font-size: 2.1875rem;
     max-width: 38%;
-    min-width: 200px;
+    min-width: 12.5rem;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 1.25rem;
     background-color: #fff;
 }
 
+/**************************************************************************************************************************/
+/*Portofolio*/
+.portofolio {
+   width: 100%;
+}
+.portofolio h2 {
+    padding-top: 5%;
+    font-size: 2rem;
+    text-align: center;
+}
 
+@media screen and (min-width: 0px) {
+    .portofolio_container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+    }
+    .portofolio figure {
+        margin: 5% auto;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    
+    .portofolio figure iframe {
+        width: 95%;
+        height: 37.5rem;
+        border: rgb(18, 100, 73) solid 5px;
+    }
+    .portofolio figure figcaption {
+        text-decoration: underline;
+        margin: 5%;
+    }
+    .portofolio_container figure p {
+        line-height: 2;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .portofolio figure {
+        margin: 5% auto;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    
+    .portofolio figure iframe {
+        width: 95%;
+        height: 37.5rem;
+        border: rgb(18, 100, 73) solid 5px;
+    }
+
+    .portofolio figure figcaption {
+        text-decoration: underline;
+        margin: 5%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .portofolio_container {
+        flex-direction: row;
+    }
+
+    .portofolio figure {
+    margin: 5% 5% 10% 5%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.portofolio figure iframe {
+    width: 37.5rem;
+    height: 31.25rem;
+    border: rgb(18, 100, 73) solid 5px;
+}
+.portofolio figure figcaption {
+    text-decoration: underline;
+    margin: 5%;
+    }
+}
+/**************************************************************************************************************************/
 /* aside et footer*/
 .contact {
     width: 100%;
@@ -577,7 +653,7 @@ a:active {
 .contact a{
     text-decoration: none;
     padding: 10px;
-    color: rgb(18, 100, 73);;
+    color: rgb(18, 100, 73);
 }
 
 .logo img {
