@@ -9,7 +9,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="image/favicon_io/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="image/favicon_io/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="image/favicon_io/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
+	<!-- <link rel="manifest" href="/site.webmanifest"> -->
 
         <!--lien vers la feuille de style-->
     <link rel="stylesheet" type="text/css" href="css/profil.css">
@@ -21,7 +21,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">   
     <title>Données personnelles</title>
 </head>
-<body class="fond_d_ecran_page_profil">
+
+<body>
     <header>
         <h1>Gabrielle Brie</h1> 
     </header>
@@ -36,158 +37,180 @@
     <main>
 
         <!--Accueil-->
-        <div class="accueil" id="profil">
-            <img class="image_accueil1" alt="image d'accueil petite" src="image/page_d_accueil.png">
-            <img class="image_accueil3" alt="image d'accueil grande" src="image/page_d_accueil3.png">
-            <img class="image_accueil2" alt="image d'accueil moyenne" src="image/page_d_accueil2.png">
-            
-            <article class="accroche">
-                <h2>Futur développeur web</h2>
-                <p>&#192; la recherche d'une alternance afin d'effectuer une reconversion professionnelle et pour devenir développeur web, je souhaite intégrer 
-                    une entreprise qui me permette de réaliser des projets associant la mécanique de la programmation à son aspect visuel.
-                    <br>
-                     Je mettrai à profit, pour le compte de votre entreprise, mon esprit pratique, ma curiosité pour la programmation, la rigueur de mon 
-                     travail et ma créativité afin de réaliser des sites web efficaces, agréables à utiliser, accessibles à tous, adaptables à tout type d'écran 
-                     et efficaces.
-                </p>          
-            </article>
-        </div>
+
+        <section class="banner">
+            <img class="banner_image1" alt="image d'accueil moyenne" src="image/page_d_accueil.png">
+            <img class="banner_image2" alt="image d'accueil petite" src="image/page_d_accueil2.png">
+            <img class="banner_image3" alt="image d'accueil grande" src="image/page_d_accueil3.png">
+        </section>
+        
+        <section class="catch_phrase">
+            <h2>Développeur web junior</h2>
+            <!--A changer-->
+            <p>&#192; la recherche d'une alternance afin d'effectuer une reconversion professionnelle et pour devenir
+                développeur web, je souhaite intégrer une entreprise dynamique.  
+                <br>
+                Motivée, je mettrai à profit mon esprit pratique, mon intérêt pour la programmation, la rigueur de mon
+                travail et ma créativité afin de réaliser des sites web efficaces, agréables à utiliser, accessibles à tous,
+                adaptables à tout type d'écran et efficaces.
+            </p>
+        </section>
+
+        
 
         <!--Savoirs-->
-        <div class="container_flex">
-            <article class="savoirs" id="competences">
-                <h2>Langages</h2>
-                <div class="langage_img">
-                    <div>
-                        <img src="image/html-5.png" alt="HTML5">
-                        <p>HTML5</p>
-                    </div>
-                    <div>
-                        <img src="image/css .png" alt="CSS">
-                        <p>CSS</p>
-                    </div>
-                    <div>
-                        <img src="image/js.png" alt="Javascript">
-                        <p>JavaScript</p>
-                    </div>
-                    <div>
-                        <img src="image/react.png" alt="React.js">
-                        <p>React.js</p>
-                    </div>
-                    <div>
-                        <img src="image/php.png" alt="PHP">
-                        <p>PHP</p>
-                    </div>
-                    <div>
-                        <img src="image/symfony.png" alt="Symfony">
-                        <p>Symfony</p>
-                    </div>
-                    <div>
-                        <img src="image/sql.png" alt="MySQL">
-                        <p>MySQL</p>
-                    </div>
+        <section class="knowledge">
+            <h2>Langages</h2>
+            <div class="language_img">
+                <div>
+                    <img src="image/html-5.png" alt="HTML5">
+                    <p>HTML5</p>
                 </div>
-            </article>
+                <div>
+                    <img src="image/css .png" alt="CSS">
+                    <p>CSS</p>
+                </div>
+                <div>
+                    <img src="image/js.png" alt="Javascript">
+                    <p>JavaScript</p>
+                </div>
+                <div>
+                    <img src="image/react.png" alt="React.js">
+                    <p>React.js</p>
+                </div>
+                <div>
+                    <img src="image/php.png" alt="PHP">
+                    <p>PHP</p>
+                </div>
+                <div>
+                    <img src="image/symfony.png" alt="Symfony">
+                    <p>Symfony</p>
+                </div>
+                <div>
+                    <img src="image/sql.png" alt="MySQL">
+                    <p>MySQL</p>
+                </div>
+            </div>
+        </section>
 
         <!--Formation et expérience pro-->       
-            <div class="formation" id="formation">
-                <article>
-                    <h2>Expériences professionnelles</h2>
-                    <section>
-                        <h3>2016 à 2022 - Professeur des écoles - &#201;ducation nationale - Académie de Paris</h3>
-                    </section>
-                </article>
-                <article>
-                    <h2>Formation</h2>
-                    <section>
-                        <h3>2016 - Master 1 Professorat des écoles - Université de Cergy-Pontoise</h3>
-                        <p>École supérieure du professorat et de l'éducation (Inspé)</p>
-                        <p></p>
-                    </section>
-                    <section>
-                        <h3>2014 - Licence de droit</h3>
-                        <p>Licence 1 et 2 de droit en (ENS Cachan D1 droit-économie) - Lycée Carcouët et Université de Nantes</p>
-                        <p>Licence 3 de droit en cours à distance - Université Panthéon-Sorbonne</p>
-                    </section>
-                    <section>
-                        <h3>2009 - Baccalauréat général</h3>
-                        <p>Filière scientique</p>
-                        <p>Spécialité physique-chimie</p>
-                    </section>
-                </article>
-            </div>
-
-            <!--Compétences-->
-            <div class="competences">   
-                <div class="soft_skills__et_langues_template">
-                    <h2>Soft Skills</h2>
-                    <ul>
-                        <li><p>Curiosité</p></li>
-                        <li><p>Rigueur</p></li>
-                        <li><p>Organisée</p></li>
-                    </ul>
-                    <h2>Langues</h2>
-                    <ul>
-                        <li><p>Anglais</p></li>
-                        <li><p>Allemand</p></li>
-                    </ul>
-                </div>           
-                <div class="container_langue_soft_skills">
-                    <article class="soft_skills__et_langues">
-                    </article>  
+        <section class="training">
+            <div>
+                <h2>Formation</h2>
+                <div class="exp">
+                    <h3>Développeur Web - 04/2023-08/2023</h3>
+                    <h4>Konexio, Paris</h4>
+                    <h4>Préparation du Titre Professionnel de Développeur Web et Web Mobile - Bac +2</h4>
+                    <p>Développement d’applications frontend avec React</p>
+                    <p>Développement d’applications backend avec Symfony</p>
+                    <p>Conception de base de données</p>
+                    <p>Veille technologique</p>
+                </div>
+                <div class="exp">
+                    <h3>Autodidacte</h3>
+                    <p>HTML et CSS - Coursera</p>
+                    <p>JavaScript - CodeCademy</p>
+                    <p>Initiation au Python - Coursera</p>
+                </div>
+                <div class="exp">
+                    <h3>Master 1 Professorat des écoles - 2015</h3>
+                    <h4>Université de Cergy-Pontoise</h4>
+                    <h4>École supérieure du professorat et de l'éducation (Inspé)</h4>
+                </div>
+                <div class="exp">
+                    <h3>Licence de droit - 2014</h3>
+                    <h4>Licence 1 et 2 de droit en (ENS Cachan D1 droit-économie) - Lycée Carcouët et Université de Nantes</h4>
+                    <h4>Licence 3 de droit en cours à distance - Université Panthéon-Sorbonne</h4>
+                    <p>Rigueur</p>
+                    <p>Capacité d'analyse</p>
                 </div>
             </div>
-        </div>
-        <!--Galerie d'images des centres d'intérêts-->
-        <div  class="container_galerie" id="centre_d_interets">
-            <h3 class="centre_d_interets_titre">Centre d'intérêts</h3> 
-            <div class="centre_d_interets">                
-                <figure class="figure">
-                    <button type="button" id="next"><img src="image/arrow.png" alt="flêche" class="arrow"></button>
-                    <img src="image/jeu_de_societe.jpg" alt="Jeux de société" id="slider">                   
-                    <button type="button" id="previous"><img src="image/arrowDG.png" alt="flêche" class="arrow"></button>
-                </figure>
-                <p id="figcaption">Jeux de société</p>
+            <div>
+                <h2>Expériences professionnelles</h2>
+                <div class="exp">
+                    <h3>Professeur des écoles - &#201;ducation nationale - 2016-2022</h3> 
+                    <h4>Académie de Paris</h4>
+                    <p>Organisation du travail</p>
+                    <p>Respect des délais</p>
+                </div>
             </div>
-        </div>
+        </section>
+        
 
-        <article  class="portofolio">
-            <h2>Portofolio</h2>
-            <div class="portofolio_container">
-                <figure>
-                    <iframe title="list" id="list" src="list.html"></iframe>
-                    <figcaption>Permet de faire un liste des personnes présentes</figcaption>
-                    <p>Fait avec HTML5, CSS et javascript
-                        <br>
-                        <a target="_self" href="list.html">Lien vers la page d'origine</a>
-                    </p>   
-                </figure>
-                <figure>
-                    <iframe title="paysage" id="paysage" src="paysage.html"></iframe>
-                    <figcaption>Paysage avec un personnage qui avance quand on clique avec la souris</figcaption>
-                    <p>Fait avec HTML5 et la librairie javascript p5.js
-                        <br>
-                        <a target="_self" href="paysage.html">Lien vers la page d'origine</a>
-                    </p>                   
-                </figure>
-            </div>          
-        </article>      
+            <!--Soft skills-->
+        <section class="soft_skills">   
+            <div class="soft_skills_and_languages_template">
+                <h2>Soft Skills</h2>
+                <ul>
+                    <li><p>Curiosité</p></li>
+                    <li><p>Rigueur</p></li>
+                    <li><p>Organisée</p></li>
+                </ul>
+                <h2>Langues</h2>
+                <ul>
+                    <li><p>Anglais</p></li>
+                    <li><p>Allemand</p></li>
+                </ul>
+            </div>           
+        </section>
+        <section class="soft_skills_moving_container">
+            <div class="container_language_soft_skills">
+            </div>
+        </section>
 
+        <section  class="portofolio_list">
+            <figure>
+                <iframe title="list" class="list" src="list.html"></iframe>
+                <figcaption>Permet de faire une liste des personnes présentes</figcaption>
+                <p>Fait avec HTML5, CSS et javascript
+                    <br>
+                    <a target="_self" href="list.html">Lien vers la page d'origine</a>
+                </p>   
+            </figure>
+        </section>
+
+        <section class="portofolio_landscape">
+            <figure>
+                <iframe title="paysage" class="paysage" src="paysage.html"></iframe>
+                <figcaption>Paysage avec un personnage qui avance quand on clique avec la souris</figcaption>
+                <p>Fait avec HTML5 et la librairie javascript p5.js
+                    <br>
+                    <a target="_self" href="paysage.html">Lien vers la page d'origine</a>
+                </p>                   
+            </figure>         
+        </section>
+
+        <!--Galerie d'images des centres d'intérêts-->
+        <section class="hobby">
+            <h3 class="hobby_title">Centre d'intérêts</h3>
+            <div class="gallery">
+                <figure class="gallery_figure">
+                    <button type="button" class="next"><img src="image/arrow.png" alt="flêche" class="arrow"></button>
+                    <img src="image/jeu_de_societe.jpg" alt="Jeux de société" class="slider">
+                    <button type="button" class="previous"><img src="image/arrowDG.png" alt="flêche" class="arrow"></button>
+                </figure>
+                <p class="figcaption">Jeux de société</p>
+            </div>
+        </section>
+        <aside class="contact">
+            <h3>Contact</h3>
+            <div class="logo">
+                <img alt="logo gmail" src="image/logo_gmail.png">
+                <a href="mailto:rayhearthdars@gmail.com?subject=Premier contact&body=Comment vas-tu?">rayhearthdars@gmail.com</a>
+            </div>
+            <br>
+            <div class="logo">
+                <img alt="github logo" src="image/github-mark.png">
+                <a href="https://github.com/rayhearthdars">Github</a>
+            </div>
+            <div class="logo">
+                <img alt="LinkedIn Logo" src="image/linkedin.png">
+                <a href="https://www.linkedin.com/in/gabrielle-brie-716950251/">LinkedIn</a>
+            </div>
+        </aside>
     </main>
-    <aside class="contact" id="contact">
-        <h3>Contact</h3>
-        <div class="logo">
-            <a href="mailto:rayhearthdars@gmail.com?subject=Premier contact&body=Comment vas-tu?"><img alt="logo gmail" src="image/logo_gmail.png"> rayhearthdars@gmail.com</a>    
-        </div>  
-        <br>
-        <div class="logo">
-            <a href="https://github.com/rayhearthdars"><img alt="github logo" src="image/github-mark.png">Github</a>   
-        </div>
-        <div class="logo">
-            <a href="https://www.linkedin.com/in/gabrielle-brie-716950251/"><img alt="LinkedIn Logo" src="image/linkedin.png">LinkedIn</a>
-        </div>
-    </aside>
-    <footer class="footer">
+
+    <footer>
         <h3>Crédits:</h3>
         <p>Image par <a href="https://pixabay.com/fr/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=40166">Clker-Free-Vector-Images</a> de <a href="https://pixabay.com/fr//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=40166">Pixabay</a></p>
         <p>Font sur <a href="https://fonts.google.com/specimen/Fredericka+the+Great?category=Display">Fredericka the Great</a></p>

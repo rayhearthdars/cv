@@ -48,61 +48,41 @@ table {
 
 /*Fin du reset-CSS*/
 /**********************************************************************************************/
-/*Général*/
 
 @font-face {
     font-family: FrederickatheGreat-Regular;
     src: url(../image/Fredericka_the_Great/FrederickatheGreat-Regular.ttf) format(truetype);
 }
 
-html {
-    font-size: 16px;
-}
 body {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
 header {
-    width: 100%;
     font-size: 3em;
     text-align: center;
     background-color: rgb(18, 100, 73);
     color: #fffefb;
-    padding: 0.3em 0px 0.5em 0px;
-    margin: 0 auto;
+    padding: 1rem 0px 4rem 0px;
+    height: 3rem;
 }
 
 nav {
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
-    background-color: rgb(220, 243, 235);
+    background-color: #dcf3eb;
     border-radius: 10px;
     width: 80%;
     text-align: center;
-}
-
-@media screen and (min-width: 0px) {
-    nav {
-        flex-direction: column;
-        height: 100px;
-        position: absolute;
-        top: 15%;
-        left: 7%;
-        padding: 15px;
-    }
-}
-
-@media screen and (min-width: 900px) {
-    nav {
-        flex-direction: row;
-        height: 5%;
-        padding: 10px 0px 10px 10px;
-        position: absolute;
-        top: 15%;
-        left: 10%;
-    }
+    flex-direction: column;
+    height: 100px;
+    position: absolute;
+    top: 3.95rem;
+    left: 7%;
+    padding: 15px;
 }
 
 nav a {
@@ -114,8 +94,8 @@ nav a {
     font-variant: small-caps;
 }
 
-nav a:visited{
-    color:#72b5a1;
+nav a:visited {
+    color: #72b5a1;
 }
 
 nav a:hover {
@@ -123,18 +103,14 @@ nav a:hover {
     background-color: rgb(220, 243, 235);
 }
 
-main {
-    width: 100%;
-}
-
-a:link{
+a:link {
     color: rgb(13, 69, 51);
     cursor: pointer;
 }
 a:visited {
-    color:#72b5a1;
+    color: #72b5a1;
 }
-a:hover, .lien:hover {
+a:hover {
     background-color: #fffefb;
     color: rgb(13, 69, 51);
 }
@@ -143,549 +119,406 @@ a:active {
     color: rgb(13, 69, 51);
 }
 
-.accroche, .savoirs, .container_langue_soft_skills, #next, #previous, #figcaption, .portofolio {
-      background-color: #72b5a1;
+main {
+    display: grid;
+    width: 100vw;
+    grid-template-areas:
+        "banner"
+        "catch_phrase"
+        "training"
+        "knowledge"
+        "soft_skills"
+        "soft_skills_moving"
+        "portofolio_list"
+        "portofolio_landscape"
+        "hobby"
+        "contact";
+    grid-template-rows: repeat(10, max-content);
+    grid-template-columns: 1fr;
 }
-.accroche, .formation, td, #figcaption, .contact h3 {
+
+.banner {
+    background-color: #72b5a1;
+}
+.banner_image2 {
+    width: 100vw; 
+    grid-area: banner;
+}
+ .banner_image1 {
+    display: none;
+} 
+.banner_image3 {
+    display: none;
+}
+
+.catch_phrase {
+    grid-area: catch_phrase;
     color: rgb(13, 69, 51);
+    background-color: #72b5a1;
+    padding: 1.5rem;
+    text-align: center;
+    line-height: 2;
+    font-weight: 300;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: -2px;
 }
-.accroche h2, .savoirs h2,.soft_skills__et_langues p, .soft_skills__et_langues h2, .centre_d_interets_titre , #figcaption, .portofolio, .contact h3, .footer h3 {
+.catch_phrase h2 {
+    text-decoration: underline;
+    padding: 1.2rem;
+    font-variant: small-caps;
+    font-size: 2.1rem;
+    font-weight: 500;
     font-family: FrederickatheGreat-Regular, cursive, sans-serif;
 }
 
-/********************************************************************************************/
-/*partie accueil*/
+.training {
+    grid-area: training;
+    line-height: 1.4rem;
+    background-color: #ffffff;
+    padding: 1.5rem 0;
+    color: rgb(13, 69, 51);
+}
+.exp {
+    margin-bottom: 1.5rem;
+}
+.training h2{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    border: solid rgb(18, 100, 73) 3px;
+    border-radius: 10px;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 1.7rem auto;
+    padding: 1rem;
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif;
+}
+.training h3 {
+    font-size: 01.2rem;
+    font-weight: 300;
+    padding: 15px 0px 5px 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+.training h4 {
+    font-size: 0.9rem;
+    font-weight: 100;
+    line-height: 1.4rem;
+    padding: 0px 15px 0px 15px;
+    text-align: center;
+}
+.training p {
+    font-size: 1.1rem;
+    font-weight: 200;
+    text-align: center;
+    color: rgb(113, 146, 126);
+}
 
-.accueil {
+.knowledge {
+    grid-area: knowledge;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #72b5a1;
+}
+.knowledge h2 {
+    text-decoration: underline;
+    padding: 1.2rem;
+    font-variant: small-caps;
+    font-size: 2.1rem;
+    font-weight: 500;
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif;
+}
+.language_img {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    justify-content: center;
+}
+.language_img div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: #fffefb;
+}
+.language_img img {
+    width: 100px;
 }
 
-@media screen and (min-width:1100px) {
-    .image_accueil1 {
-        display: none;
-    }
-    .image_accueil2 {
-        display: none;
-    }
-    .image_accueil3 {
-        display: block;
-        width:50%
-    }
-    .accroche {
-        width: 40%;
-    }
-}
-
-@media screen and (max-width:1100px) {
-    .image_accueil3 {
-        display: none;
-    }
-    .image_accueil2 {
-        display: block;
-        width: 100%;
-    }
-    .image_accueil1 {
-        display: none;
-    }
-    .accroche {
-        width: 100%;
-    }
-}
-@media screen and (max-width:700px) {
-    .image_accueil3 {
-        display: none;
-    }
-    .image_accueil2 {
-        display: none;
-    }
-    .image_accueil1 {
-        display: block;
-        width: 100%;
-    }
-    .accroche {
-        width: 100%;
-    }
-}
-
-.accroche {
-    padding: 8% 5% 5% 5%;
-    text-align: center;
-    line-height: 35px;
-    font-weight: 300;
-    font-size: 20px;
-    font-style: italic;
-}
-
-.accroche h2 {
-    text-decoration: underline;
-    padding: 20px;
-    font-variant: small-caps;
-    font-size: 35px;
-    font-weight: 500;
-}
-
-.accroche p {
-    width: 70%;
+.soft_skills {
+    grid-area: soft_skills;
     margin: 0 auto;
 }
-
-
-/********************************************************************************************/
-/*Partie savoirs, formation et expérience pro*/
-
-.container_flex {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
-}
-
-@media screen and (max-width:1100px) {
-    .formation {
-        width: 100%;
-        height: 100%;
-        order: 1;
-        margin-bottom: 2rem;
-    }
-    .savoirs {
-        width: 100%;
-        height: 100%;
-        order: 2;
-        margin-bottom: 2rem;
-    }
-    .competences{
-        order: 3;
-        margin-bottom: 2rem;
-    }
-}
-
-@media screen and (min-width:1100px) {
-    .formation {
-        width: 47%;
-        height: 100%;
-        margin-bottom: 2rem;
-    }
-    .savoirs {
-        width: 49.7%;
-        height: 100%;
-    }
-    .competences{
-        margin-bottom: 2rem;
-    }
-}
-
-
-/********************************************************************************************/
-/*Spécifique à la partie formation et expérience pro*/
-
-@media screen and (min-width: 0px) {
-    .formation {
-        line-height: 1.5rem;
-        background-color: #ffffff;
-        margin: 0 auto;
-        padding-bottom: 2rem;
-    }
-    
-    .formation h2 {
-        font-size: 1.1rem;
-        font-weight: 500;
-        text-align: center;
-        border: solid rgb(18, 100, 73) 3px;
-        border-radius: 10px;
-        font-variant: small-caps;
-        font-style: italic;
-        width: -moz-fit-content;
-        width: fit-content;    
-        margin: 35px auto;
-    }
-    
-    .formation h3 {
-        font-size: 0.9rem;
-        font-weight: 300;
-        padding: 5px 0px 15px 10px;
-        text-align: center;
-        text-decoration: underline;
-    }
-    
-    .formation p {
-        font-size: 0.7rem;
-        font-style: italic;
-        font-weight: 100;
-        line-height: 20px;
-        padding: 0px 15px 0px 15px;
-        text-align: center;
-    }
-}
-
-@media screen and (min-width: 1100px) {
-    .formation {
-        line-height: 2rem;
-    }
-    .formation h2 {
-        font-size: 2rem;
-        padding: 10px;
-    }
-    .formation h3 {
-        font-size: 1.3rem;
-    }
-}
-
-
-/********************************************************************************************/
-
-/*Spécifique à la partie savoirs*/
-
-
-
-@media screen and (min-width: 0) {
-    .savoirs {
-        padding: 20px 3px;
-        font-family: FrederickatheGreat-Regular, cursive, sans-serif;
-        height: 625px;
-    }
-    
-    .savoirs h2 {
-        font-size: 40px;
-        text-align: center;
-        padding: 20px 5px;
-        margin: 10px;
-    }
-    
-    .langage_img {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10%;
-    }
-    .langage_img > div {
-        background-color: #fffefb;
-        margin: 30px auto;
-        width: 20%;
-        height: 7rem;
-        border: #fffefb solid 1px;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .langage_img div img {
-        width: 50%;
-    }
-
-    .langage_img p {
-        width: 100%;
-        text-align: center;
-        font-size: 0.8rem;
-    }
-    .langage_img div:nth-child(3) img {
-        padding-top: 0.5rem;
-        width: 45%;
-    }
-    .langage_img div:nth-child(4) img {
-        padding-top: 3%;
-    }
-    .langage_img div:nth-child(5) img {
-        padding: 20% 0;
-    }
-    .langage_img div:nth-child(6) img {
-        padding: 8% 0;
-    }
-    .langage_img div:nth-child(7) img {
-        padding: 2% 0;
-    }
-}
-@media screen and (min-width: 768px) {
-    .langage_img > div {
-        height: 13rem;
-    }
-    .langage_img p {
-        font-size: 1.3rem;
-    }
-    .langage_img div img {
-        width: 75%;
-    }    
-    .langage_img {
-        margin-top: 1%;
-    }
-    .langage_img div:nth-child(3) img {
-        width: 80%;
-    }
-    .langage_img div:nth-child(5) img {
-        padding: 25.5% 0;
-    }
-}
-
-
-/**************************************************************************************************************************/
-/*Spécifique à la partie compétences soft skills*/
-
-
-.competences {
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-    border: rgb(18, 100, 73) solid 5px;
-}
-@media screen and (min-width: 1100px) {
-    .container_langue_soft_skills {
-        width: 100%;
-        height: 92%;
-        padding-bottom: 2rem;
-    }    
-    .soft_skills__et_langues_template {
-        border:rgb(18, 100, 73) solid 3px;
-    }
-}
-@media screen and (max-width: 1100px) {
-    .competences {
-        flex-wrap: wrap;
-        border-radius: 15px;
-        padding-top: 15px;
-    }
-    .container_langue_soft_skills {
-        width: 100%;
-        height: 100%;
-    }   
-    .soft_skills__et_langues_template {
-        margin: 0 auto;
-        width: 100%;
-        border-radius: 15px;
-        margin-bottom: 2rem;
-    }
-}
-
-.soft_skills__et_langues_template {
+.soft_skills_and_languages_template {
+    border: rgb(18, 100, 73) solid 3px;
     width: 370px;
     padding-bottom: 1rem;
+    border-radius: 10px;
 }
-
-.soft_skills__et_langues_template p, .soft_skills__et_langues_template h2 {
-    color:rgb(18, 100, 73);
+.soft_skills_and_languages_template p,
+.soft_skills_and_languages_template h2 {
+    color: rgb(18, 100, 73);
     font-size: 35px;
     padding-top: 1rem;
     font-family: FrederickatheGreat-Regular, cursive, sans-serif;
     text-align: center;
 }
-.soft_skills__et_langues_template h2 {
+.soft_skills_and_languages_template h2 {
     text-decoration: underline;
 }
+.soft_skills_moving_container {
+    grid-area: soft_skills_moving;
+    overflow: hidden;
+    height: 400px;
+    background-color: #72b5a1;
 
-.soft_skills__et_langues {
+}
+.container_language_soft_skills {
     width: 100%;
-    height: 100%;
+    position: absolute;
     display: inline-block;
     position: relative;
     overflow: hidden;
     padding-bottom: 1rem;
 }
-.soft_skills__et_langues li {
-    position: absolute;
-    height: 100%;
-}
-
-.soft_skills__et_langues p, .soft_skills__et_langues h2
-   {
+.container_language_soft_skills h2, .container_language_soft_skills p {
     display: inline;
     white-space: nowrap;
     font-size: 35px;
     position: relative;
-    height: 100%;   
-    color:rgb(18, 100, 73);
+    height: 100%;
+    color: rgb(18, 100, 73);
     padding-top: 0.2rem;
-}    
-.soft_skills__et_langues h2 {
-    text-decoration: underline;
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif;
 }
 
-/**************************************************************************************************************************/
-  /*Spécifique à la partie centre d'intérêts*/
 
-.container_galerie {
-    margin: 0 auto;
+.portofolio_list {
+    grid-area: portofolio_list;
     width: 100%;
+    padding: 0 0 3rem 0;
 }
-
-.centre_d_interets_titre {
-    margin: 25px;
-    text-align: center;
-    font-size: 2rem;
+.portofolio_landscape {
+    grid-area: portofolio_landscape;
+    width: 100%;
+    padding: 3rem 0;
 }
-
-.centre_d_interets{
-    margin: 3.125rem auto;
-}
-
-.figure {
+.portofolio_list figure, .portofolio_landscape figure {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    max-width: 90%;
-    min-width: 12.5rem;
-    margin: 0 auto;
 }
-
-#slider {
-    min-width: 12.5rem;
-    max-width: 100%;
-}
-
-#next, #previous{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    opacity: 0.5;
-    border: none;
-    width: 1.5625rem;
-    overflow: hidden;
-}
-
-.arrow {
-    width: 0.9375rem;
-}
-
-#figcaption {
-    display: block;
-    text-align: center;
-    font-size: 2.1875rem;
-    max-width: 38%;
-    min-width: 12.5rem;
-    margin: 0 auto;
-    padding-top: 1.25rem;
-    background-color: #fff;
-}
-
-/**************************************************************************************************************************/
-/*Portofolio*/
-.portofolio {
-   width: 100%;
-}
-.portofolio h2 {
+.portofolio_list h2, .portofolio_landscape h2 {
     padding-top: 5%;
     font-size: 2rem;
     text-align: center;
 }
-
-@media screen and (min-width: 0px) {
-    .portofolio_container {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        /* flex-wrap: wrap; */
-        flex-direction: column;
-    }
-    .portofolio figure {
-        margin: 5% auto;
-        text-align: center;
-        font-size: 1.3rem;
-    }
-    
-    .portofolio figure iframe {
-        width: 95%;
-        height: 37.5rem;
-        border: rgb(18, 100, 73) solid 5px;
-    }
-    .portofolio figure figcaption {
-        text-decoration: underline;
-        margin: 5%;
-    }
-    .portofolio_container figure p {
-        line-height: 2;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .portofolio figure {
-        margin: 5% auto;
-        text-align: center;
-        font-size: 1.3rem;
-    }
-    
-    .portofolio figure iframe {
-        width: 95%;
-        height: 37.5rem;
-        border: rgb(18, 100, 73) solid 5px;
-    }
-
-    .portofolio figure figcaption {
-        text-decoration: underline;
-        margin: 5%;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .portofolio_container {
-        flex-direction: row;
-    }
-
-    .portofolio figure {
-    margin: 5% 5% 10% 5%;
-    text-align: center;
-    font-size: 1.3rem;
-}
-
-.portofolio figure iframe {
-    width: 37.5rem;
-    height: 31.25rem;
+.portofolio_list iframe, .portofolio_landscape iframe {
+    width: 97%;
+    height: 36rem;
     border: rgb(18, 100, 73) solid 5px;
 }
-.portofolio figure figcaption {
+.portofolio_list figcaption, .portofolio_landscape figcaption {
     text-decoration: underline;
-    margin: 5%;
-    }
+    margin: 1rem 0;
+    text-align: center;
 }
-/**************************************************************************************************************************/
-/* aside et footer*/
-.contact {
+.portofolio_list p, .portofolio_landscape p {
+    line-height: 2;
+    text-align: center;
+}
+
+
+.hobby {
+    grid-area: hobby;
+    margin: 0 auto;
     width: 100%;
-    height: 140px;
+    background-color: #72b5a1;
+}
+.hobby_title {
+    margin: 25px;
+    text-align: center;
+    font-size: 2rem;
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif;
+}
+.gallery {
+    margin: 3.125rem auto;
+}
+.gallery_figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    min-width: 12.5rem;
+    margin: 0 auto;
+}
+.slider {
+    max-width: 80vw;
+}
+.next,
+.previous {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: #fffefb;
+    opacity: 0.5;
+    border: none;
+    width: 1.5625rem;
+    padding: 1rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.figcaption {
+    display: block;
+    text-align: center;
+    font-size: 2.1875rem;
+    max-width: 70%;
+    min-width: 12.5rem;
+    margin: 0 auto;
+    padding-top: 1.25rem;
+    font-family: FrederickatheGreat-Regular, cursive, sans-serif;
+}
+
+.contact {
+    grid-area: contact;
+    height: 200px;
     text-align: center;
     padding: 10px 0px;
+    margin-bottom: 1rem;
+    color: #126449;
 }
-
 .contact h3 {
-    font-size: 30px;
+    font-size: 2rem;
     padding-bottom: 10px;
 }
-
-.contact a{
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo a {
     text-decoration: none;
-    padding: 10px;
-    color: rgb(18, 100, 73);
+    padding: 1rem;
+    background-color: #ffffff;
+    color: #126449;
+}
+.contact div img{
+    width: 2rem;
+    padding: 0.5rem;
 }
 
-.logo img {
-    width: 20px;
-}
-.logo img[src="image/linkedin.png"] {
-    width: 60px;
-    position: relative;
-    top: 10px;
-}
-.footer {
+footer {
     padding: 10px 0px;
     width: 100%;
     color: #000000;
     text-align: center;
     font-size: 13px;
     font-weight: 100;
-    background-color: rgb(18, 100, 73);
+    background-color: #126449;
     line-height: 1.3;
 }
 
-.footer h3 {
+footer h3 {
     font-size: 18px;
     text-decoration: underline;
     padding-bottom: 10px;
 }
 
-.footer a {
-    color: #aeccc2;
+footer p a:link {
+    color: #72b5a1;
 }
 
-.footer a:visited {
-    color: #fffefb;
+footer a:hover {
+    background-color: #72b5a1;
+}
+
+footer a:visited {
+    color: #fffefb23;
+}
+
+@media screen and (min-width: 1000px) {
+    nav {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    }
+    main {
+        grid-template-areas:
+            "banner catch_phrase"
+            "knowledge training"
+            "soft_skills soft_skills_moving"         
+            "portofolio_list portofolio_landscape"
+            "hobby hobby"
+            "contact contact";
+        grid-template-rows: repeat(6, max-content);
+        grid-template-columns: repeat(, 50%);
+    }
+    .banner {
+        background-color: #d5d4d9;
+    }
+    .banner_image2 {
+        width: 50vw;
+    }
+    .catch_phrase {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 3rem;
+    }
+    .catch_phrase h2 {
+        font-size: 3rem;
+    }
+    .catch_phrase p {
+        font-size: 1.3rem;
+    }
+    .knowledge h2 {
+        padding: 2rem 0rem;
+        font-variant: small-caps;
+        font-size: 3rem;
+    }
+    .language_img {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .language_img div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem;
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    .language_img img {
+        width: 100px;
+    }
+    .soft_skills_and_languages_template {
+        border: none;
+        width: auto;
+        padding-bottom: 0;
+    }
+    .soft_skills_moving_container {
+        border-bottom-left-radius: 10px;
+    }
+    .portofolio_list, .portofolio_landscape {
+        padding-top: 2rem;
+        margin: 0 auto;
+        background-color: #dcf3eb;
+    }
+    .portofolio_list iframe, .portofolio_landscape iframe {
+        width: 40vw;
+        border-radius: 10px;
+        border: #126449 solid 5px;
+    }
 }
 
