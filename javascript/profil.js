@@ -1,6 +1,6 @@
 // /*Images gallery */
 
-var images = [
+const images = [
     //create new array with images to show in gallery
     "image/jeu_de_societe.jpg",
     "image/randonnee.jpg",
@@ -9,7 +9,7 @@ var images = [
     "image/peinture.jpg",
 ];
 
-var figcaptions = [
+const figcaptions = [
     //create array with captions to show in gallery
     "Jeux de société",
     "Randonnée",
@@ -18,10 +18,10 @@ var figcaptions = [
     "Peinture",
 ];
 
-var num = 0;
+let num = 0;
 function next() {
-    let slider = document.getElementsByClassName("slider").item(0); // get first image
-    let caption_slider = document.getElementsByClassName("figcaption").item(0); // get first caption
+    const slider = document.getElementsByClassName("slider").item(0); // get first image
+    const caption_slider = document.getElementsByClassName("figcaption").item(0); // get first caption
     num++;
     if (num >= images.length) {
         num = 0;
@@ -31,8 +31,8 @@ function next() {
 }
 function previous() {
     // same in reverse
-    let slider = document.getElementsByClassName("slider").item(0);
-    let caption_slider = document.getElementsByClassName("figcaption").item(0);
+    const slider = document.getElementsByClassName("slider").item(0);
+    const caption_slider = document.getElementsByClassName("figcaption").item(0);
     num--;
     if (num < 0) {
         num = images.length - 1;
@@ -41,8 +41,8 @@ function previous() {
     caption_slider.textContent = figcaptions[num];
 }
 
-let prevImage = document.getElementsByClassName("previous").item(0);
-let nextImage = document.getElementsByClassName("next").item(0);
+const prevImage = document.getElementsByClassName("previous").item(0);
+const nextImage = document.getElementsByClassName("next").item(0);
 
 prevImage.addEventListener(
     "click",
@@ -64,19 +64,19 @@ nextImage.addEventListener(
 // If fill is true, create multiple element. If false create only one.
 // If name is given, add class to element.
 // Return handle to it.
-let softSkillsAndLanguages = document.getElementsByClassName("container_language_soft_skills").item(0);
+const softSkillsAndLanguages = document.getElementsByClassName("container_language_soft_skills").item(0);
 
 function addElement(text, blockType, parent, fill, numTop, name) {
-    let el = document.createElement(blockType);
-    let newContent = document.createTextNode(text);
+    const el = document.createElement(blockType);
+    const newContent = document.createTextNode(text);
     el.appendChild(newContent);
     parent.appendChild(el);
 
-    let parentWidth = window.innerWidth;
-    let width = el.offsetWidth;
-    let height = el.offsetHeight;
-    let multiplier = parentWidth / width / 2; // calculates the number of element to add to html so that it covers the entire screen
-    let paddingSides = (parentWidth - width * multiplier) / multiplier / 2; //calculates padding to add to each element
+    const parentWidth = window.innerWidth;
+    const width = el.offsetWidth;
+    const height = el.offsetHeight;
+    const multiplier = parentWidth / width / 2; // calculates the number of element to add to html so that it covers the entire screen
+    const paddingSides = (parentWidth - width * multiplier) / multiplier / 2; //calculates padding to add to each element
 
     if (numTop !== -1) {
         el.style.top = height * numTop + 15 + "px"; //position each el[0] from top according to their number (in order of their apparition)
@@ -111,7 +111,7 @@ function addElement(text, blockType, parent, fill, numTop, name) {
         }
     }
 
-    let heightOfsoftSkillsAndLanguages = height * 9;
+    const heightOfsoftSkillsAndLanguages = height * 9;
     softSkillsAndLanguages.style.height = heightOfsoftSkillsAndLanguages + "px";
 
     return el;
@@ -149,7 +149,7 @@ function initialPositionOfElement(el) {
 }
 // position[0] = (elWidth * i) + elWidth;
 function moveElementsForwards(el) {
-    let elWidth = el[0].offsetWidth;
+    const elWidth = el[0].offsetWidth;
     for (let i = 0; i < el.length; i++) {
         let position = parseFloat(el[i].style.left.slice(0, -2)) + elWidth; //slice to remove "px" from el[i].style.left and turns string to float
         //add elWidth to make elWidth the origin so as to make every new el[i] start at -elWidth and not 0 so we can have the impression of an uninterrupted line
@@ -167,7 +167,7 @@ function moveElementsBackwards(el) {
         let x = pos2 - u; //0 is the origin once again so x is pos2 - u
         return x;
     }
-    let elWidth = el[0].offsetWidth;
+    const elWidth = el[0].offsetWidth;
     for (let i = 0; i < el.length; i++) {
         let position = parseFloat(el[i].style.left.slice(0, -2)); //.slice to remove "px" from el[i].style.left and turns string to float
         let posConverted = invertPos2AndOrigin(position);
@@ -176,13 +176,13 @@ function moveElementsBackwards(el) {
     }
 }
 
-let elClassSkill = document.getElementsByClassName("skill");
-let elClassCuri = document.getElementsByClassName("curi");
-let elClassRig = document.getElementsByClassName("rig");
-let elClassOrg = document.getElementsByClassName("org");
-let elClassLang = document.getElementsByClassName("lang");
-let elClassAng = document.getElementsByClassName("ang");
-let elClassAll = document.getElementsByClassName("all");
+const elClassSkill = document.getElementsByClassName("skill");
+const elClassCuri = document.getElementsByClassName("curi");
+const elClassRig = document.getElementsByClassName("rig");
+const elClassOrg = document.getElementsByClassName("org");
+const elClassLang = document.getElementsByClassName("lang");
+const elClassAng = document.getElementsByClassName("ang");
+const elClassAll = document.getElementsByClassName("all");
 
 //call intitialPosition for every class
 // call setInterval function to call moveElementsForwards or moveElementsBackwards every 50ms
