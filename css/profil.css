@@ -131,9 +131,10 @@ main {
         "soft_skills_moving"
         "portofolio_list"
         "portofolio_landscape"
+        "portofolio_messageChooser"
         "hobby"
         "contact";
-    grid-template-rows: repeat(10, max-content);
+    grid-template-rows: repeat(11, max-content);
     grid-template-columns: 1fr;
 }
 
@@ -301,35 +302,43 @@ main {
 .portofolio_list {
     grid-area: portofolio_list;
     width: 100%;
-    padding: 0 0 3rem 0;
+    padding: 0 0 2rem 0;
+    background-color: #dcf3eb;
 }
 .portofolio_landscape {
     grid-area: portofolio_landscape;
     width: 100%;
     padding: 3rem 0;
+    background-color: #dcf3eb;
 }
-.portofolio_list figure, .portofolio_landscape figure {
+.portofolio_messageChooser {
+    grid-area: portofolio_messageChooser;
+    width: 100%;
+    padding: 0 0 3rem 0;
+    background-color: #dcf3eb;
+}
+.portofolio_list figure, .portofolio_landscape figure, .portofolio_messageChooser figure{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.portofolio_list h2, .portofolio_landscape h2 {
+.portofolio_list h2, .portofolio_landscape h2, .portofolio_messageChooser h2 {
     padding-top: 5%;
     font-size: 2rem;
     text-align: center;
 }
-.portofolio_list iframe, .portofolio_landscape iframe {
+.portofolio_list iframe, .portofolio_landscape iframe, .portofolio_messageChooser iframe {
     width: 97%;
     height: 36rem;
     border: rgb(18, 100, 73) solid 5px;
 }
-.portofolio_list figcaption, .portofolio_landscape figcaption {
+.portofolio_list figcaption, .portofolio_landscape figcaption, .portofolio_messageChooser figcaption{
     text-decoration: underline;
     margin: 1rem 0;
     text-align: center;
 }
-.portofolio_list p, .portofolio_landscape p {
+.portofolio_list p, .portofolio_landscape p, .portofolio_messageChooser p {
     line-height: 2;
     text-align: center;
 }
@@ -455,6 +464,7 @@ footer a:visited {
             "knowledge training"
             "soft_skills soft_skills_moving"         
             "portofolio_list portofolio_landscape"
+            "portofolio_messageChooser portofolio_messageChooser"
             "hobby hobby"
             "contact contact";
         grid-template-rows: repeat(6, max-content);
@@ -510,12 +520,19 @@ footer a:visited {
     .soft_skills_moving_container {
         border-bottom-left-radius: 10px;
     }
-    .portofolio_list, .portofolio_landscape {
+    .portofolio_list, .portofolio_landscape, .portofolio_messageChooser {
         padding-top: 2rem;
-        margin: 0 auto;
-        background-color: #dcf3eb;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    .portofolio_list iframe, .portofolio_landscape iframe {
+    .portofolio_list figure,
+    .portofolio_landscape figure,
+    .portofolio_messageChooser figure{
+        width: 40vw;
+    }
+    .portofolio_list iframe, .portofolio_landscape iframe, .portofolio_messageChooser iframe, {
         width: 40vw;
         border-radius: 10px;
         border: #126449 solid 5px;
