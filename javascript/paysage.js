@@ -1,27 +1,27 @@
 //points of reference for the ground right side of the road
-let p1 = { x: 800 , y: 300 };
-let p2 = {x: 475, y: 400};
-let p3 = {x: 475, y: 450};
-let p4 = {x: 700, y: 600};
-let p5 = {x: 800, y: 600};
+let p1 = { x: 800, y: 300 };
+let p2 = { x: 475, y: 400 };
+let p3 = { x: 475, y: 450 };
+let p4 = { x: 700, y: 600 };
+let p5 = { x: 800, y: 600 };
 //points of reference for the ground left side of the road
-let p6 = {x: 0, y: 600};
-let p7 = {x: 0, y: 450};
+let p6 = { x: 0, y: 600 };
+let p7 = { x: 0, y: 450 };
 //big tree
 let trunk = {
 	x: 660,
 	y: 300,
 	width: 20,
-	height: 150
-}
+	height: 150,
+};
 let branch = {
 	x1: 575,
 	y1: 300,
 	x2: 750,
 	y2: 300,
 	x3: 662,
-	y3: 100
-}
+	y3: 100,
+};
 //small trees
 let smallbranch = {
 	x1: 750,
@@ -29,28 +29,28 @@ let smallbranch = {
 	x2: 770,
 	y2: 300,
 	x3: 760,
-	y3:285
-}
+	y3: 285,
+};
 //clouds
-let x = 0
+let x = 0;
 let cloud1 = {
 	y: 100,
 	width: 100,
-	height: 100
-}
+	height: 100,
+};
 
 let variationclouds1x, variationClouds2x, characterPositionX, characterScale, characterPositionY;
 
-function setup(){
+function setup() {
 	createCanvas(800, 600);
 	variationclouds1x = 0;
 	variationClouds2x = 300;
 	characterPositionX = 580;
-	characterPositionY = 600; 
+	characterPositionY = 600;
 	characterScale = 1;
 }
 
-function draw(){
+function draw() {
 	noStroke();
 	background(149, 206, 208);
 
@@ -66,43 +66,29 @@ function draw(){
 	scaleCharacterSmaller();
 }
 
-
-function mouseClicked () {
-
-
-	if (characterPositionY >= 480){
+function mouseClicked() {
+	if (characterPositionY >= 480) {
 		characterPositionX -= 10;
 		characterPositionY -= 10;
-	}
-
-
-	else if (characterPositionY >= 350){
+	} else if (characterPositionY >= 350) {
 		characterPositionY -= 10;
-	}
-
-	else  if (characterPositionY == 300) {
+	} else if (characterPositionY == 300) {
 		characterPositionX = characterPositionX;
 		characterPositionY = characterPositionY;
+	} else if (characterPositionY >= 150) {
+		characterPositionX -= 0;
+		characterPositionY -= 0;
 	}
 
-	else{
-		characterPositionX += 5;
-		characterPositionY -= 3;
-	}
-
-
-	
-	
 	characterScale = constrain(characterScale, 0, 1);
 	characterScale -= 0.01;
 }
 
-
-function drawCloud2(){
-	variationClouds2x +=  1;
+function drawCloud2() {
+	variationClouds2x += 1;
 	constrain(variationClouds2x, 0, 800);
-	if (variationClouds2x === 800){
-		variationClouds2x = - 300;
+	if (variationClouds2x === 800) {
+		variationClouds2x = -300;
 	}
 	fill(255, 255, 255);
 	ellipse(variationClouds2x, cloud1.y + 85, cloud1.width, cloud1.height);
@@ -113,11 +99,11 @@ function drawCloud2(){
 	ellipse(variationClouds2x + 350, cloud1.y - 50, cloud1.width - 50, cloud1.height - 50);
 }
 
-function drawCloud1(){
+function drawCloud1() {
 	fill(255, 255, 255);
 	variationclouds1x += 1;
 	constrain(x, 0, 800);
-	if (variationclouds1x === 800){
+	if (variationclouds1x === 800) {
 		variationclouds1x = 0;
 	}
 	ellipse(variationclouds1x, cloud1.y, cloud1.width, cloud1.height);
@@ -128,37 +114,36 @@ function drawCloud1(){
 	ellipse(variationclouds1x, cloud1.y + 150, cloud1.width, cloud1.height);
 }
 
-function drawSecondMountainLeft(){
+function drawSecondMountainLeft() {
 	fill(17, 48, 16);
 	beginShape();
-		vertex((p2.x - 250 + p4.x - 650) / 2, (p2.y + 300) /2);
-		vertex(p2.x - 250, p2.y);
-		vertex((p1.x + p2.x - 410)/2, (p2.y + p1.y + 50)/ 2);
-		vertex(p1.x -160, p1.y + 50);
-		vertex(p4.x - 400, 200);
-		vertex(p4.x - 500, 250);
+	vertex((p2.x - 250 + p4.x - 650) / 2, (p2.y + 300) / 2);
+	vertex(p2.x - 250, p2.y);
+	vertex((p1.x + p2.x - 410) / 2, (p2.y + p1.y + 50) / 2);
+	vertex(p1.x - 160, p1.y + 50);
+	vertex(p4.x - 400, 200);
+	vertex(p4.x - 500, 250);
 	endShape();
 }
 
-function drawFirstMountainLeft(){
+function drawFirstMountainLeft() {
 	fill(36, 100, 34);
 	beginShape();
-		vertex(p7.x, p7.y);
-		vertex(p2.x - 250, p2.y);
-		vertex(p4.x - 650, 300);
+	vertex(p7.x, p7.y);
+	vertex(p2.x - 250, p2.y);
+	vertex(p4.x - 650, 300);
 	endShape();
 }
 
-function drawSmallTreesBehind(){
+function drawSmallTreesBehind() {
 	fill(135, 86, 13);
-	ellipse(trunk.x + 100, trunk.y, trunk.width - 17, trunk.height -125);
-	ellipse(trunk.x + 110, trunk.y + 5, trunk.width - 17, trunk.height -125);
-	ellipse(trunk.x + 115, trunk.y + 10, trunk.width - 17, trunk.height -125);
-	ellipse(trunk.x + 120, trunk.y + 5, trunk.width - 17, trunk.height -125);
-	ellipse(trunk.x + 125, trunk.y, trunk.width - 17, trunk.height -125);
-	ellipse(trunk.x + 130, trunk.y - 5, trunk.width - 17, trunk.height -125);
-	ellipse(trunk.x + 135, trunk.y - 7, trunk.width - 17, trunk.height -125);
-
+	ellipse(trunk.x + 100, trunk.y, trunk.width - 17, trunk.height - 125);
+	ellipse(trunk.x + 110, trunk.y + 5, trunk.width - 17, trunk.height - 125);
+	ellipse(trunk.x + 115, trunk.y + 10, trunk.width - 17, trunk.height - 125);
+	ellipse(trunk.x + 120, trunk.y + 5, trunk.width - 17, trunk.height - 125);
+	ellipse(trunk.x + 125, trunk.y, trunk.width - 17, trunk.height - 125);
+	ellipse(trunk.x + 130, trunk.y - 5, trunk.width - 17, trunk.height - 125);
+	ellipse(trunk.x + 135, trunk.y - 7, trunk.width - 17, trunk.height - 125);
 
 	fill(35, 81, 37);
 	triangle(smallbranch.x1, smallbranch.y1, smallbranch.x2, smallbranch.y2, smallbranch.x3, smallbranch.y3);
@@ -170,52 +155,51 @@ function drawSmallTreesBehind(){
 	triangle(smallbranch.x1 + 35, smallbranch.y1 - 7, smallbranch.x2 + 35, smallbranch.y2 - 7, smallbranch.x3 + 35, smallbranch.y3 - 7);
 }
 
-function rightSideOfTheRoad(){
-		fill(48,127,72);
+function rightSideOfTheRoad() {
+	fill(48, 127, 72);
 	beginShape();
-		vertex(p1.x, p1.y);
-		vertex(p2.x, p2.y);
-		vertex(p3.x, p3.y);
-		vertex(p4.x, p4.y);	
-		vertex(p5.x, p5.y);	
+	vertex(p1.x, p1.y);
+	vertex(p2.x, p2.y);
+	vertex(p3.x, p3.y);
+	vertex(p4.x, p4.y);
+	vertex(p5.x, p5.y);
 	endShape();
 }
 
-function leftSideOfTheRoad(){
+function leftSideOfTheRoad() {
 	beginShape();
-		vertex(p2.x - 250, p2.y);
-		vertex(p3.x - 250, p3.y);
-		vertex(p4.x - 350, p4.y);
-		vertex(p5.x - 450, p5.y);
-		vertex(p6.x, p6.y);
-		vertex(p7.x, p7.y);
+	vertex(p2.x - 250, p2.y);
+	vertex(p3.x - 250, p3.y);
+	vertex(p4.x - 350, p4.y);
+	vertex(p5.x - 450, p5.y);
+	vertex(p6.x, p6.y);
+	vertex(p7.x, p7.y);
 	endShape();
 }
 
-function drawRoad(){
+function drawRoad() {
 	fill(185, 176, 93);
 	beginShape();
-		vertex(p2.x, p2.y);
-		vertex(p3.x, p3.y);
-		vertex(p4.x, p4.y);
-		vertex(p4.x - 350, p4.y);
-		vertex(p3.x - 250, p3.y);
-		vertex(p2.x - 250, p2.y);
-		vertex(p1.x -160, p1.y + 50);
+	vertex(p2.x, p2.y);
+	vertex(p3.x, p3.y);
+	vertex(p4.x, p4.y);
+	vertex(p4.x - 350, p4.y);
+	vertex(p3.x - 250, p3.y);
+	vertex(p2.x - 250, p2.y);
+	vertex(p1.x - 160, p1.y + 50);
 	endShape();
 }
 
-function drawBigTree(){
-		fill(135, 86, 13);
+function drawBigTree() {
+	fill(135, 86, 13);
 	ellipse(trunk.x, trunk.y, trunk.width, trunk.height);
-	fill(77, 178, 80)
+	fill(77, 178, 80);
 	triangle(branch.x1, branch.y1, branch.x2, branch.y2, branch.x3, branch.y3);
 }
 
-function scaleCharacterSmaller(){
-
+function scaleCharacterSmaller() {
 	push();
-	translate(characterPositionX, characterPositionY)
+	translate(characterPositionX, characterPositionY);
 
 	push();
 	scale(0.9 * characterScale, 0.9 * characterScale);
@@ -231,23 +215,22 @@ function scaleCharacterSmaller(){
 	fill(129, 73, 144);
 	ellipse(0, 40, 16, 50);
 	pop();
-	
 
 	push();
 	//right arm
 	fill(102, 50, 0);
-	translate(- 100, 45);
+	translate(-100, 45);
 	rotate(75);
 	ellipse(109, 40, 7, 50);
 	//left arm
 	rotate(-150);
-	ellipse(75, - 37, 7, 50);
+	ellipse(75, -37, 7, 50);
 	pop();
 
 	push();
 	fill(0, 0, 0);
 	//right leg
-	translate(- 100, 45);
+	translate(-100, 45);
 
 	push();
 	rotate(25);

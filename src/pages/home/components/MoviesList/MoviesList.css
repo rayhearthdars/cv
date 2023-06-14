@@ -1,0 +1,13 @@
+.movie-container img {
+	width: 12rem;
+}
+
+.movie-container {
+	display: flex;
+	flex-wrap: wrap;
+	height: inherit;
+	overflow: auto;
+	text-align: center;
+	align-items: flex-end;
+	justify-content: space-around;
+}

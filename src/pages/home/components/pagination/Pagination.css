@@ -1,0 +1,35 @@
+.pagination_button_container {
+    display: flex;
+    margin: 1rem auto;
+}
+
+.pagination_button {
+    color: black;
+    background-color: lightgrey;
+    width: 2.5rem;
+    height: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.2rem;
+}
+#isActive {
+    background-color: gray;
+}
+
+.pagination_button:hover {
+    background-color: rgb(61, 60, 60);
+    color: white;
+}
+
+.ellipses {
+    color: lightgrey;
+    width: 2.5rem;
+    height: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.2rem;
+}

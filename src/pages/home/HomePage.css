@@ -1,0 +1,10 @@
+body {
+	background-color: #4d4b4b;
+}
+
+.movie_and_pagination_container {
+	display: flex;
+	flex-direction: column-reverse;
+	overflow: hidden;
+	background-color: #4d4b4b;
+}

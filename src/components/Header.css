@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Share+Tech&display=swap');
+
+header{
+    height: 13.19rem;
+    background-color: #AC2727;
+    text-align: center;
+    font-family: 'Indie Flower', cursive, sans-serif;
+    font-size: 2.5rem;
+    padding-top: 2rem;
+}
+header h1 {
+    color: black;
+    text-decoration: none;
+}
+@media screen and (max-width: 728px) {
+    header {
+        font-size: 1.80rem;
+    }
+}
